@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Health Report</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            color: #333;
+            background-color: white;
+        }
+        
+        .container {
+            width: 100%;
+            /* A4 width */
+            height:370mm; /* A4 height */
+            margin-bottom: 0;
+            padding-bottom: 0;
+           background-image: url('{{ background_data_url }}');
+            background-size: cover;
+            background-position: right ;
+            background-repeat: no-repeat;
+            position: relative;
+          
+            
+        }
+        
+        .header {
+            margin-bottom: 20px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .logo-text {
+            margin-left: 2px;
+            color: #FF6B35;
+            font-weight: 600;
+            font-size: 22px;
+        }
+        
+        .tagline {
+            font-size: 11px;
+            color: #666;
+            margin-top: -5px;
+            margin-left: 33px;
+        }
+        
+        .date {
+            color: #FF6B35;
+            font-size: 23px;
+            margin-top: 20px;
+            margin:40px;
+        }
+        
+        .title {
+            color:  #0367A6;
+/* Sub Header/Default/40px */
+margin:40px;
+font-family: Poppins;
+font-size: 60px;
+font-style: normal;
+font-weight: 600;
+line-height: 150%;
+        }
+        
+        .description {
+            max-width: 60%;
+            color: #575757;
+            font-size: 25px;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            margin: 40px;
+        }
+        
+        .author {
+            font-size: 20px;
+            margin-top: 20px;
+            margin: 40px;
+        }
+        
+        .author-name {
+            color: #FF6B35;
+            font-weight: 500;
+        }
+        
+      
+        
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            right: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            color: #0077B6;
+        }
+        
+        .website, .email {
+            display: flex;
+            align-items: center;
+        }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .header img{
+            width: 420px;
+            height: 120px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ logo_data_url }}" alt="HealthSutra Logo">
+        </div>
+        
+        <div class="date" id="current-date">{{date}}</div>
+
+
+        
+        <div class="title">Personalized Health  <br>Analytics Report</div>
+        
+        <div class="description">
+            A smart health report simplifies medical data into clear, actionable insights, enabling better health tracking and seamless sharing with doctors.
+        </div>
+        
+        <div class="author">By <span class="author-name">{{ author|default('HealthSutra') }}</span></div>
+        
+        <div class="background-image" ></div>
+        
+        <div class="footer">
+            <div class="website">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: relative; top:3px;">
+                    <path d="M8 14C11.3137 14 14 11.3137 14 8C14 4.68629 11.3137 2 8 2C4.68629 2 2 4.68629 2 8C2 11.3137 4.68629 14 8 14Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 8H14" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M8 13.8389C9.38071 13.8389 10.5 11.2247 10.5 7.99994C10.5 4.77519 9.38071 2.16101 8 2.16101C6.61929 2.16101 5.5 4.77519 5.5 7.99994C5.5 11.2247 6.61929 13.8389 8 13.8389Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                    
+                <a href="healthsutra.ai" style="font-style: none; color: #666; text-decoration: none;">healthsutra.ai</a>
+            </div>
+            <div class="email">
+                <svg width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: relative; top:3px;">
+                    <path d="M14 6V12.5C14 12.6326 13.9473 12.7598 13.8536 12.8536C13.7598 12.9473 13.6326 13 13.5 13H2.5C2.36739 13 2.24021 12.9473 2.14645 12.8536C2.05268 12.7598 2 12.6326 2 12.5V6L8 2L14 6Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6.90921 9.5L2.1543 12.8587" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M13.8468 12.8587L9.0918 9.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 6L9.09094 9.5H6.90906L2 6" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                
+                    
+                <a href="mailto:contact@healthsutra.ai" style="font-style: none; color: #666; text-decoration: none;">contact@healthsutra.ai</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

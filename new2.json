@@ -1,0 +1,397 @@
+{
+    "smartReportName": "smartreport_shantanurajpathak_ShantanuRajpathak",
+    "inRangeCategory": ["Heart Health", "Kidney Health", "General Health"],
+    "originalFileLink": "https://healthsutra-testing-bucket.s3.ap-south-1.amazonaws.com/ShantanuRajpathak.pdf?versionId=latest",
+    "patientData": {
+      "patient_data": {
+        "TestCode": "003v1",
+        "Description": "",
+        "FileName": "ShantanuRajpathak",
+        "BloodGroup": "A+",
+        "DietPreference": "Strictly Vegetarian",
+        "ChronicConditions": "None",
+        "PreviousSurgeries": "Bariatric (weight loss) surgery",
+        "Hospitilizations": "Surgeries lead to hospitalization",
+        "Allergies": "None",
+        "Medications": "Amlodipine",
+        "VaccinationHistory": "Varicella vaccine, Shingles vaccine, MMRV vaccine",
+        "HereditaryConditions": "Hypertension",
+        "ParentSiblingHealth": "Mother has liver problem",
+        "Gender": "Male"
+      }
+    },
+    "reportDetails": {
+      "patientDetails": {
+        "name": "SHANTANU RAJPATHAK",
+        "age": 73,
+        "gender": "Male",
+        "uhid": null,
+        "opdBedWard": null,
+        "prescribedBy": null,
+        "referredBy": "DR. ANUP BHOYAR"
+      },
+      "reportMetadata": {
+        "labNo": "311894",
+        "labName": "MED CLINIQ - SATHE HOSPITAL",
+        "collectionDateTime": "2021-03-06T11:32:00",
+        "reportDateTime": "2021-03-06T02:10:00",
+        "receivingDateTime": "2021-03-06T11:41:00",
+        "reportStatus": "Final"
+      }
+    },
+    "tests": [
+      {
+        "testCategory": "Heart Health",
+        "testDetails": [
+          {
+            "testName": "Troponin - I, serum by CMIA",
+            "result": { "value": 11.29, "unit": "pg/ml", "flag": null },
+            "referenceRange": ["Upto 100"],
+            "generalizedRefRange": "Upto 100",
+            "method": "CHEMILUMINESCENT IMMUNOASSAY",
+            "remarks": "Troponin I levels performed at baseline may be normal but 98% patients of myocardial infarct attain levels clearly above\nnormal after 6 hours. Hence confimration with repeat sample after 6 hours may be necessary. 2. Troponin I levels remain high\nfor 1-2 weeks after an acute episode of infarct and can also be used to diagnose perioperative infarcts. 3. Troponin is not\ngenerally affected by damage to other muscles so that muscle injections, accidents, strenous exercise and drugs that can\ndamage muscle do not affect troponin levels. 4. Troponin levels may also be elevated with acute or chronic conditions such as\nmyocarditis (heart inflammation), congestive heart failure,",
+            "outOfRange": false
+          }
+        ]
+      },
+      {
+        "testCategory": "Complete Blood Count",
+        "testDetails": [
+          {
+            "testName": "HEMOGLOBIN",
+            "result": { "value": 12.6, "unit": "gm/dL", "flag": "L" },
+            "referenceRange": ["13.0 - 17.0"],
+            "generalizedRefRange": "13.0 - 17.0",
+            "method": "Hb by cyanmethemoglobin (spectrophotometric measurement)",
+            "remarks": null,
+            "outOfRange": true
+          },
+          {
+            "testName": "R B C COUNT",
+            "result": { "value": 5.26, "unit": "millions/cumm", "flag": null },
+            "referenceRange": ["4.5 - 5.5"],
+            "generalizedRefRange": "4.5 - 5.5",
+            "method": "RBC by electrical impedance",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "P C V",
+            "result": { "value": 39.2, "unit": "%", "flag": null },
+            "referenceRange": ["36.0 - 46.0"],
+            "generalizedRefRange": "36.0 - 46.0",
+            "method": "PCV by calculation",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "M C V",
+            "result": { "value": 74.5, "unit": "fl", "flag": "L" },
+            "referenceRange": ["76.0 - 96.0"],
+            "generalizedRefRange": "76.0 - 96.0",
+            "method": "MCV by electrical impedance",
+            "remarks": null,
+            "outOfRange": true
+          },
+          {
+            "testName": "M C H",
+            "result": { "value": 23.9, "unit": "pg", "flag": "L" },
+            "referenceRange": ["27.0 - 32.0"],
+            "generalizedRefRange": "27.0 - 32.0",
+            "method": "MCH by calculation",
+            "remarks": null,
+            "outOfRange": true
+          },
+          {
+            "testName": "M C H C",
+            "result": { "value": 32.1, "unit": "%", "flag": null },
+            "referenceRange": ["32.0 - 36.0"],
+            "generalizedRefRange": "32.0 - 36.0",
+            "method": "MCHC by calculation",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "R D W - CV",
+            "result": { "value": 14.8, "unit": "%", "flag": null },
+            "referenceRange": ["11.5 - 16.5"],
+            "generalizedRefRange": "11.5 - 16.5",
+            "method": "RDW by calculation",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "W.B.C. COUNT",
+            "result": { "value": 8600, "unit": "per cumm", "flag": null },
+            "referenceRange": ["4,000 - 10,000"],
+            "generalizedRefRange": "4,000 - 10,000",
+            "method": "WBC by electrical impedance",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "NEUTROPHILS",
+            "result": { "value": 69.9, "unit": "%", "flag": null },
+            "referenceRange": ["40.0 - 75.0"],
+            "generalizedRefRange": "40.0 - 75.0",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "EOSINOPHILS",
+            "result": { "value": 0.4, "unit": "%", "flag": "L" },
+            "referenceRange": ["1.0 - 6.0"],
+            "generalizedRefRange": "1.0 - 6.0",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": true
+          },
+          {
+            "testName": "LYMPHOCYTES",
+            "result": { "value": 24.9, "unit": "%", "flag": null },
+            "referenceRange": ["20.0 - 45.0"],
+            "generalizedRefRange": "20.0 - 45.0",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "MONOCYTES",
+            "result": { "value": 4.5, "unit": "%", "flag": null },
+            "referenceRange": ["2.0 - 10.0"],
+            "generalizedRefRange": "2.0 - 10.0",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "BASOPHILS",
+            "result": { "value": 0.3, "unit": "%", "flag": null },
+            "referenceRange": ["0.0 - 2.0"],
+            "generalizedRefRange": "0.0 - 2.0",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "ABSOLUTE NEUTROPHIL COUNT",
+            "result": { "value": 6011, "unit": "per cumm", "flag": null },
+            "referenceRange": ["2000 - 7000"],
+            "generalizedRefRange": "2000 - 7000",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "ABSOLUTE EOSINOPHIL COUNT",
+            "result": { "value": 34, "unit": "per cumm", "flag": null },
+            "referenceRange": ["20 - 500"],
+            "generalizedRefRange": "20 - 500",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "ABSOLUTE LYMPHOCYTE COUNT",
+            "result": { "value": 2141, "unit": "per cumm", "flag": null },
+            "referenceRange": ["1000 - 3000"],
+            "generalizedRefRange": "1000 - 3000",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "ABSOLUTE MONOCYTE COUNT",
+            "result": { "value": 387, "unit": "per cumm", "flag": null },
+            "referenceRange": ["200 - 1000"],
+            "generalizedRefRange": "200 - 1000",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "ABSOLUTE BASOPHIL COUNT",
+            "result": { "value": 26, "unit": "per cumm", "flag": null },
+            "referenceRange": ["0 - 200"],
+            "generalizedRefRange": "0 - 200",
+            "method": "Differential count by light scatter, flow cytometry and microscopy",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "PLATELET COUNT",
+            "result": { "value": 2, "unit": "lakhs/cumm", "flag": null },
+            "referenceRange": ["1.5 - 4.5"],
+            "generalizedRefRange": "1.5 - 4.5",
+            "method": null,
+            "remarks": null,
+            "outOfRange": false
+          }
+        ],
+        "insights": {
+          "patient": {
+            "testSummary": "Your Complete Blood Count results show that your Hemoglobin (12.6 gm/dL), MCV (74.5 fl), MCH (23.9 pg), and Eosinophils (0.4%) are below the normal range. Low hemoglobin, MCV, and MCH often indicate iron deficiency anemia, which means your body isn't producing enough healthy red blood cells. Low eosinophils can be associated with various factors, including medication use or underlying conditions. It's important to consult with your doctor to determine the underlying cause and appropriate treatment.",
+            "associatedSymptoms": [
+              "Fatigue: Low hemoglobin levels can lead to reduced oxygen delivery to tissues, causing fatigue and weakness.",
+              "Pale skin: Reduced red blood cell production can result in a paler complexion.",
+              "Dizziness: Insufficient oxygen supply to the brain due to low hemoglobin can cause dizziness.",
+              "Shortness of breath: The body may struggle to deliver enough oxygen to meet its needs, leading to shortness of breath, especially during physical activity.",
+              "Brittle nails: Iron deficiency can affect nail health, leading to brittle or spoon-shaped nails."
+            ],
+            "monitoringRecommendationsShort": [
+              "Monitor your energy levels daily and note any significant changes.",
+              "Observe your skin for any unusual paleness.",
+              "Track any instances of dizziness or shortness of breath.",
+              "Pay attention to the appearance and texture of your nails.",
+              "Keep a record of your dietary intake, focusing on iron-rich foods."
+            ],
+            "monitoringRecommendationsLong": [
+              "Repeat Complete Blood Count (CBC) every 3 months to monitor hemoglobin, MCV, MCH, and eosinophil levels.",
+              "Consult with your doctor every 6 months to review your overall health and discuss any persistent symptoms.",
+              "Consider a bone marrow examination if the cause of low blood counts is not clear.",
+              "Monitor iron levels annually to assess iron stores and adjust supplementation as needed.",
+              "Undergo regular check-ups to assess for any underlying conditions contributing to low eosinophil count."
+            ]
+          }
+        }
+      },
+      {
+        "testCategory": "Serum Electrolytes",
+        "testDetails": [
+          {
+            "testName": "SERUM SODIUM",
+            "result": { "value": 128, "unit": "mmol/L", "flag": "L" },
+            "referenceRange": ["135 - 148"],
+            "generalizedRefRange": "135 - 148",
+            "method": "Ion Selective Electrode",
+            "remarks": null,
+            "outOfRange": true
+          },
+          {
+            "testName": "SERUM POTASSIUM",
+            "result": { "value": 5.2, "unit": "mmol/L", "flag": null },
+            "referenceRange": ["3.5 - 5.3"],
+            "generalizedRefRange": "3.5 - 5.3",
+            "method": "Ion Selective Electrode",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "SERUM CHLORIDE",
+            "result": { "value": 92, "unit": "mmol/L", "flag": "L" },
+            "referenceRange": ["98 - 107"],
+            "generalizedRefRange": "98 - 107",
+            "method": "Ion Selective Electrode",
+            "remarks": null,
+            "outOfRange": true
+          }
+        ],
+        "insights": {
+          "patient": {
+            "testSummary": "Your Serum Electrolytes results indicate that your Serum Sodium (128 mmol/L) and Serum Chloride (92 mmol/L) levels are below the normal range. Low sodium (hyponatremia) and low chloride (hypochloremia) can be caused by various factors, including excessive fluid intake, certain medications, or underlying medical conditions. It's important to consult with your doctor to determine the underlying cause and appropriate treatment.",
+            "associatedSymptoms": [
+              "Nausea and vomiting: Electrolyte imbalances can disrupt normal digestive function, leading to nausea and vomiting.",
+              "Headache: Changes in sodium and chloride levels can affect brain function, causing headaches.",
+              "Confusion: Severe electrolyte imbalances can impair cognitive function, leading to confusion and disorientation.",
+              "Muscle weakness, spasms, or cramps: Electrolytes play a crucial role in muscle function, and imbalances can cause weakness, spasms, or cramps.",
+              "Seizures: In severe cases, electrolyte imbalances can disrupt brain activity and trigger seizures."
+            ],
+            "monitoringRecommendationsShort": [
+              "Monitor your fluid intake and output daily.",
+              "Note any instances of nausea, vomiting, or headache.",
+              "Pay attention to any changes in your mental clarity or cognitive function.",
+              "Observe for any muscle weakness, spasms, or cramps.",
+              "Keep a record of your dietary intake, focusing on sodium and chloride-rich foods."
+            ],
+            "monitoringRecommendationsLong": [
+              "Repeat Serum Electrolytes test every 3 months to monitor sodium and chloride levels.",
+              "Consult with your doctor every 6 months to review your overall health and discuss any persistent symptoms.",
+              "Monitor kidney function annually to assess for any underlying kidney issues contributing to electrolyte imbalances.",
+              "Review medications annually to identify any drugs that may be affecting electrolyte levels.",
+              "Undergo regular check-ups to assess for any underlying conditions contributing to electrolyte imbalances."
+            ]
+          }
+        }
+      },
+      {
+        "testCategory": "Kidney Health",
+        "testDetails": [
+          {
+            "testName": "SERUM UREA LEVEL",
+            "result": { "value": 36, "unit": "mg/dL", "flag": null },
+            "referenceRange": ["18 - 55"],
+            "generalizedRefRange": "18 - 55",
+            "method": "GLDH - urease",
+            "remarks": null,
+            "outOfRange": false
+          },
+          {
+            "testName": "SERUM CREATININE",
+            "result": { "value": 0.68, "unit": "mg/dl", "flag": null },
+            "referenceRange": ["Adults : 0.6 - 1.2"],
+            "generalizedRefRange": "0.6 - 1.2",
+            "method": "Alkaline Picrate Method",
+            "remarks": null,
+            "outOfRange": false
+          }
+        ]
+      },
+      {
+        "testCategory": "General Health",
+        "testDetails": [
+          {
+            "testName": "C – REACTIVE PROTEIN (ON SERUM)",
+            "result": { "value": 0.1, "unit": "mg/L", "flag": null },
+            "referenceRange": [
+              "Negative : Less than or equal to 6 mg/L",
+              "Positive : Greater than 6 mg/L"
+            ],
+            "generalizedRefRange": "Negative : Less than or equal to 6 mg/L",
+            "method": "TURBIDOMETRY",
+            "remarks": "C - reactive protein (CRP) is the best known among the acute-phase proteins, a group of proteins whose concentration\nincreases in blood as a response to inflammatory disorders. CRP is normally present in low concentration in blood of healthy\nindividuals (< 6 mg/l). It is elevated in : acute inflammatory process associated with bacterial infection, post operative conditions,\nrheumatic and gastrointestinal disease. In recent studies it has been shown that in apparently healthy subjects there is a direct\ncorrelation between CRP concetrations and the risk for developement coronary heart disease (CHD).",
+            "outOfRange": false
+          }
+        ]
+      }
+    ],
+    "remark": {
+      "COMMENTS ON P B S": "R B C MORPHOLOGY Mild microcytic hypochromic.\nW B C MORPHOLOGY No abnormal cells seen.\nPLATELETS Adequate.\nPARASITES Not detected."
+    },
+    "dietSummary": {
+      "dietRecommendations": [
+        "Iron (12.6 gm/dL Hemoglobin, 74.5 fl MCV, 23.9 pg MCH are below range) - Increase intake of iron-rich foods to combat potential iron deficiency anemia. Good sources include spinach, fenugreek leaves (methi), lentils (dal), chickpeas (chana), kidney beans (rajma), and fortified cereals. Since you are strictly vegetarian, focus on plant-based iron sources and combine them with vitamin C-rich foods like lemon, oranges, and bell peppers to enhance iron absorption. Consider iron supplements if dietary changes are insufficient, but only under medical supervision. Bariatric surgery can sometimes affect nutrient absorption, so it's important to address this potential issue proactively.",
+        "Sodium (128 mmol/L Serum Sodium is below range) - Increase sodium intake to address hyponatremia. Since you are vegetarian, incorporate foods like pickles, papad, and salted nuts in moderation. Be mindful of your overall sodium intake, especially if you have hypertension, a hereditary condition. Consult your doctor to determine the appropriate sodium intake level for your specific needs.",
+        "Chloride (92 mmol/L Serum Chloride is below range) - Increase chloride intake to address hypochloremia. Table salt (sodium chloride) is the primary source of chloride. Ensure you are adequately salting your food. Other vegetarian sources include seaweed and tomatoes. Again, balance this with your hypertension risk and consult your doctor.",
+        "General Hydration - Ensure adequate fluid intake to help maintain electrolyte balance. Drink plenty of water throughout the day. Since you have low sodium and chloride, consider electrolyte-rich beverages like coconut water or homemade oral rehydration solutions (ORS) in moderation.",
+        "Vitamin B12 - Since you are vegetarian, ensure you are getting enough Vitamin B12. Good sources include fortified foods like nutritional yeast, breakfast cereals, and plant-based milks. Consider a B12 supplement if dietary sources are insufficient, especially given potential absorption issues post-bariatric surgery.",
+        "Things to Avoid - Avoid excessive fluid intake, which can further dilute sodium levels. Limit processed foods high in sodium but low in nutritional value. Be cautious with diuretics or medications that can exacerbate electrolyte imbalances. Avoid restrictive diets that may limit essential nutrient intake."
+      ]
+    },
+    "overallExerciseRecommendations": [
+      "Engage in low-impact exercises such as walking, swimming, or cycling for at least 30 minutes most days of the week. These activities are gentle on the joints and can improve cardiovascular health.",
+      "Incorporate strength training exercises using light weights or resistance bands to maintain muscle mass and bone density. Focus on exercises that target major muscle groups, such as squats, lunges, and rows.",
+      "Practice balance exercises such as standing on one foot or using a balance board to improve stability and reduce the risk of falls.",
+      "Include flexibility exercises such as stretching or yoga to maintain range of motion and prevent stiffness.",
+      "Avoid high-impact activities such as running or jumping, which can put excessive stress on the joints. Also, avoid exercises that cause pain or discomfort."
+    ],
+    "overallMonitoringRecommendation": [
+      {
+        "testCategory": "Complete Blood Count",
+        "testNames": "Hemoglobin, MCV, MCH, Eosinophils",
+        "frequency": "Every 3 months"
+      },
+      {
+        "testCategory": "Serum Electrolytes",
+        "testNames": "Serum Sodium, Serum Chloride",
+        "frequency": "Every 3 months"
+      }
+    ],
+    "summary": "Your lab results indicate low levels of hemoglobin, MCV, MCH, eosinophils, serum sodium, and serum chloride. The low hemoglobin, MCV, and MCH suggest possible iron deficiency anemia, which can cause fatigue and weakness. Low eosinophils can be associated with various factors, including medication use or underlying conditions. Low serum sodium and chloride can be caused by excessive fluid intake, certain medications, or underlying medical conditions. It's important to consult with your doctor to determine the underlying causes and appropriate treatment.",
+    "referenceLinks": {
+      "Iron Deficiency Anemia": "https://www.nhlbi.nih.gov/health-topics/iron-deficiency-anemia",
+      "Hyponatremia": "https://www.kidney.org/atoz/content/hyponatremia",
+      "Hypochloremia": "https://www.ncbi.nlm.nih.gov/books/NBK482280/"
+    }
+  }
+  

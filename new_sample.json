@@ -1,0 +1,581 @@
+{
+  "reportDetails": {
+    "isCustomHeader": true,
+    "patientDetails": {
+      "name": "Mrs. SUDHA VARSHNEY",
+      "age": 67,
+      "gender": "Female",
+      "uhid": "2000893611/GGN25IP19860",
+      "opdBedWard": "CCU1FLOOR/CCU-05",
+      "prescribedBy": null,
+      "referredBy": "DR BHARAT KUKRETI DR VIKAS GOYAL DR SAURABH SINGH GEHLOT"
+    },
+    "reportMetadata": {
+      "labNo": "GGN25IS6109655",
+      "labName": "Gurgaon",
+      "collectionDateTime": "2025-01-29T14:06:00",
+      "reportDateTime": "2025-01-30T13:00:00",
+      "receivingDateTime": "2025-01-29T14:10:00",
+      "reportStatus": "Final"
+    }
+  },
+  "tests": [
+    {
+      "testCategory": "CLINICAL BIOCHEMISTRY",
+      "sampleType": "EDTA Plasma",
+      "testDetails": [
+        {
+          "testName": "HBA1C - Glycosylated Hemoglobin",
+          "result": {
+            "value": 9.104,
+            "unit": "%",
+            "flag": "H"
+          },
+          "referenceRange": [
+            "<5.7% Normal",
+            "5.7-6.4% Prediabetes",
+            ">6.4% Diabetes"
+          ],
+          "generalizedRefRange": "<5.7% - 6.4%",
+          "method": "Turbidimetry",
+          "remarks": "Estimated average glucose 214.58",
+          "outOfRange": true
+        }
+      ],
+      "insights": {
+        "patient": {
+          "associatedSymptoms": [
+            "Excessive thirst and frequent urination",
+            "Fatigue and lack of energy",
+            "Blurred vision",
+            "Unexplained weight loss",
+            "Increased hunger"
+          ],
+          "complications": [
+            "Increased risk of cardiovascular diseases",
+            "Potential for kidney damage or diabetic nephropathy",
+            "Risk of neuropathy leading to foot ulcers",
+            "Possible retinopathy affecting vision",
+            "Higher likelihood of skin infections"
+          ],
+          "dietRecommendations": [
+            "Fiber - Incorporate oats, whole grains, and lentils to stabilize blood sugar",
+            "Omega-3 Fatty Acids - Include flaxseeds and walnuts in the diet",
+            "Magnesium - Add spinach and almonds for better glucose control"
+          ],
+          "exerciseRecommendations": [
+            "Brisk walking for 30 minutes daily",
+            "Engage in yoga sessions thrice a week",
+            "Incorporate resistance training twice a week",
+            "Swimming for 20-30 minutes twice a week"
+          ],
+          "monitoringRecommendationsShort": [
+            "Monitor blood sugar levels daily, maintaining under 140 mg/dL",
+            "Check blood pressure weekly, aiming for less than 120/80 mmHg"
+          ],
+          "monitoringRecommendationsLong": [
+            "Quarterly HbA1c check with a target below 7%",
+            "Bi-annual lipid profile test",
+            "Annual kidney function test"
+          ]
+        },
+        "doctor": {
+          "diagnosticAid": [
+            "Consider a comprehensive diabetic foot exam",
+            "Evaluate for diabetic retinopathy with an eye specialist"
+          ],
+          "treatmentPlan": [
+            "Intensify insulin therapy if required",
+            "Consider addition of SGLT2 inhibitors"
+          ],
+          "supplementRecommendations": [
+            "Prescribe Vitamin D supplements to support glucose metabolism",
+            "Consider Omega-3 supplements for cardiovascular protection"
+          ]
+        }
+      }
+    },
+    {
+      "testCategory": "CLINICAL BIOCHEMISTRY",
+      "sampleType": "Serum",
+      "testDetails": [
+        {
+          "testName": "Bilirubin Total (T Bil)",
+          "result": {
+            "value": 1.03,
+            "unit": "mg/dl",
+            "flag": null
+          },
+          "referenceRange": [
+            "0.2-1.2 mg/dl"
+          ],
+          "generalizedRefRange": "0.2-1.2 mg/dl",
+          "method": "Diazonium salt",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Bilirubin Conjugated (Bc)",
+          "result": {
+            "value": 0.62,
+            "unit": "mg/dl",
+            "flag": "H"
+          },
+          "referenceRange": [
+            "0.0-0.50 mg/dl"
+          ],
+          "generalizedRefRange": "0.0-0.50 mg/dl",
+          "method": "Diazo Reaction",
+          "remarks": null,
+          "outOfRange": true
+        },
+        {
+          "testName": "Bilirubin Unconjugated (Bu)",
+          "result": {
+            "value": 0.41,
+            "unit": "mg/dl",
+            "flag": null
+          },
+          "referenceRange": [
+            "0.00-1.10 mg/dl"
+          ],
+          "generalizedRefRange": "0.00-1.10 mg/dl",
+          "method": "Dual Wavelength Spectrophotometric",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "SGOT (AST)",
+          "result": {
+            "value": 41.1,
+            "unit": "U/L",
+            "flag": "H"
+          },
+          "referenceRange": [
+            "11-34 U/L"
+          ],
+          "generalizedRefRange": "11-34 U/L",
+          "method": "NADH",
+          "remarks": null,
+          "outOfRange": true
+        },
+        {
+          "testName": "SGPT (ALT)",
+          "result": {
+            "value": 45.91,
+            "unit": "U/L",
+            "flag": "H"
+          },
+          "referenceRange": [
+            "0-34 U/L"
+          ],
+          "generalizedRefRange": "0-34 U/L",
+          "method": "NADH",
+          "remarks": null,
+          "outOfRange": true
+        },
+        {
+          "testName": "Protein Total",
+          "result": {
+            "value": 6.4,
+            "unit": "g/dL",
+            "flag": null
+          },
+          "referenceRange": [
+            "6.3-8.2 g/dL"
+          ],
+          "generalizedRefRange": "6.3-8.2 g/dL",
+          "method": "Biuret",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Albumin",
+          "result": {
+            "value": 3.51,
+            "unit": "g/dL",
+            "flag": null
+          },
+          "referenceRange": [
+            "3.2-4.6 g/dL"
+          ],
+          "generalizedRefRange": "3.2-4.6 g/dL",
+          "method": "Bromcresol Green (BCG)",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Globulin",
+          "result": {
+            "value": 2.89,
+            "unit": "gm/dl",
+            "flag": null
+          },
+          "referenceRange": [
+            "1.50-3.60 gm/dl"
+          ],
+          "generalizedRefRange": "1.50-3.60 gm/dl",
+          "method": "Calculated Value",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "A/G Ratio (Albumin/Globulin Ratio)",
+          "result": {
+            "value": 1.21,
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [],
+          "generalizedRefRange": "",
+          "method": "Calculated Value",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Alkaline Phosphatase",
+          "result": {
+            "value": 128.53,
+            "unit": "U/L",
+            "flag": "H"
+          },
+          "referenceRange": [
+            "46-122 U/L"
+          ],
+          "generalizedRefRange": "46-122 U/L",
+          "method": "pNPP/AMP Buffer",
+          "remarks": null,
+          "outOfRange": true
+        },
+        {
+          "testName": "GGTP (GAMMA GT)",
+          "result": {
+            "value": 65.12,
+            "unit": "U/L",
+            "flag": "H"
+          },
+          "referenceRange": [
+            "0.0-38 U/L"
+          ],
+          "generalizedRefRange": "0.0-38 U/L",
+          "method": "L- Gamma-Glutamyl -4 Nitroanalide Kinetic",
+          "remarks": null,
+          "outOfRange": true
+        }
+      ],
+      "insights": {
+        "patient": {
+          "associatedSymptoms": [
+            "Jaundice or yellowing of skin and eyes",
+            "Fatigue and general malaise",
+            "Nausea or vomiting",
+            "Dark urine and light-colored stools",
+            "Abdominal pain"
+          ],
+          "complications": [
+            "Chronic liver disease or liver cirrhosis",
+            "Gallstones or bile duct obstruction",
+            "Potential liver failure if untreated",
+            "Pancreatitis in severe cases",
+            "Increased risk for liver cancer"
+          ],
+          "dietRecommendations": [
+            "Vitamin C - Citrus fruits like oranges and lemons to support liver detoxification",
+            "Antioxidants - Green leafy vegetables like spinach and kale",
+            "Folic Acid - Beans and legumes for liver health"
+          ],
+          "exerciseRecommendations": [
+            "Daily walking for 20 minutes",
+            "Light yoga sessions three times a week",
+            "Avoid heavy lifting to reduce liver strain"
+          ],
+          "monitoringRecommendationsShort": [
+            "Weekly monitoring of liver enzymes",
+            "Regular check of bilirubin levels"
+          ],
+          "monitoringRecommendationsLong": [
+            "Quarterly liver function tests",
+            "Annual ultrasound for liver assessment"
+          ]
+        },
+        "doctor": {
+          "diagnosticAid": [
+            "Consider abdominal ultrasound or CT scan for further evaluation",
+            "Possible need for MRI if obstruction is suspected"
+          ],
+          "treatmentPlan": [
+            "Liver supportive medications",
+            "Possibly consider ERCP if obstruction is suspected"
+          ],
+          "supplementRecommendations": [
+            "Prescribe Vitamin E for liver support",
+            "Consider SAMe (S-adenosylmethionine) supplements"
+          ]
+        }
+      }
+    },
+    {
+      "testCategory": "CLINICAL PATHOLOGY",
+      "sampleType": "Urine",
+      "testDetails": [
+        {
+          "testName": "Urine Analysis - Quantity",
+          "result": {
+            "value": 40,
+            "unit": "ml",
+            "flag": null
+          },
+          "referenceRange": [],
+          "generalizedRefRange": "",
+          "method": "Physical Examination",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Color",
+          "result": {
+            "value": "PALE YELLOW",
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "PALE YELLOW"
+          ],
+          "generalizedRefRange": "PALE YELLOW",
+          "method": "Physical Examination",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Appearance",
+          "result": {
+            "value": "HAZY",
+            "unit": null,
+            "flag": "H"
+          },
+          "referenceRange": [
+            "CLEAR"
+          ],
+          "generalizedRefRange": "CLEAR",
+          "method": "Physical Examination",
+          "remarks": null,
+          "outOfRange": true
+        },
+        {
+          "testName": "Urine Analysis - pH",
+          "result": {
+            "value": 6,
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "5.0-8.0"
+          ],
+          "generalizedRefRange": "5.0-8.0",
+          "method": null,
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Specific Gravity",
+          "result": {
+            "value": 1.015,
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "1.005-1.030"
+          ],
+          "generalizedRefRange": "1.005-1.030",
+          "method": "pKa Change",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Glucose",
+          "result": {
+            "value": "NIL",
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "Nil"
+          ],
+          "generalizedRefRange": "Nil",
+          "method": "Oxidase-Peroxidase Method",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Protein",
+          "result": {
+            "value": "1+",
+            "unit": null,
+            "flag": "H"
+          },
+          "referenceRange": [
+            "Nil"
+          ],
+          "generalizedRefRange": "Nil",
+          "method": "Tetrabromophenal Blue-Protine error of Indicator",
+          "remarks": "SMALL",
+          "outOfRange": true
+        },
+        {
+          "testName": "Urine Analysis- Blood",
+          "result": {
+            "value": "(HAEMOLYSED)",
+            "unit": null,
+            "flag": "H"
+          },
+          "referenceRange": [
+            "Nil"
+          ],
+          "generalizedRefRange": "Nil",
+          "method": "Sodium Nitroprusside Reaction",
+          "remarks": null,
+          "outOfRange": true
+        },
+        {
+          "testName": "Urine Analysis - Ketone",
+          "result": {
+            "value": "Negative",
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "Negative"
+          ],
+          "generalizedRefRange": "Negative",
+          "method": "Sodium Nitroprusside Reaction",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Bilirubin",
+          "result": {
+            "value": "NIL",
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "Nil"
+          ],
+          "generalizedRefRange": "Nil",
+          "method": "Coupling Of Bilirubin Diazotized Dichioroaniline",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Nitrite",
+          "result": {
+            "value": "Nil",
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "Nil"
+          ],
+          "generalizedRefRange": "Nil",
+          "method": "Conversion Of Nitrate to Nitrate",
+          "remarks": null,
+          "outOfRange": false
+        },
+        {
+          "testName": "Urine Analysis - Urobilinogen",
+          "result": {
+            "value": "Normal",
+            "unit": null,
+            "flag": null
+          },
+          "referenceRange": [
+            "Normal"
+          ],
+          "generalizedRefRange": "Normal",
+          "method": "Ehrlich Reaction",
+          "remarks": null,
+          "outOfRange": false
+        }
+      ],
+      "insights": {
+        "patient": {
+          "associatedSymptoms": [
+            "Frequent urge to urinate",
+            "Pain or discomfort during urination",
+            "Cloudy urine",
+            "Strong odor of urine",
+            "Lower abdominal pain"
+          ],
+          "complications": [
+            "Increased risk of kidney infection",
+            "Potential for urinary tract infection if untreated",
+            "Possible development of chronic kidney disease",
+            "Bladder dysfunction",
+            "Recurrent urinary tract infections"
+          ],
+          "dietRecommendations": [
+            "Probiotics - Include yogurt and fermented foods to maintain urinary health",
+            "Cranberries - Consume cranberry juice or supplements"
+          ],
+          "exerciseRecommendations": [
+            "Engage in Kegel exercises daily",
+            "Regular pelvic floor exercises"
+          ],
+          "monitoringRecommendationsShort": [
+            "Monitor urine clarity and frequency",
+            "Regular check for presence of blood in urine"
+          ],
+          "monitoringRecommendationsLong": [
+            "Annual urine test to track protein levels",
+            "Regular kidney function tests"
+          ]
+        },
+        "doctor": {
+          "diagnosticAid": [
+            "Urine culture to identify infection",
+            "Consider renal ultrasound if persistent"
+          ],
+          "treatmentPlan": [
+            "Prescribe antibiotics if bacterial infection is confirmed",
+            "Encourage fluid intake to flush the urinary system"
+          ],
+          "supplementRecommendations": [
+            "Prescribe cranberry extract supplements for urinary health"
+          ]
+        }
+      }
+    }
+  ],
+  "overallInsights": {
+    "dietRecommendations": [
+      "Fiber - Incorporate oats, whole grains, and lentils to stabilize blood sugar",
+      "Omega-3 Fatty Acids - Include flaxseeds and walnuts in the diet",
+      "Magnesium - Add spinach and almonds for better glucose control",
+      "Antioxidants - Green leafy vegetables like spinach and kale",
+      "Probiotics - Include yogurt and fermented foods to maintain urinary health"
+    ],
+    "exerciseRecommendations": [
+      "Brisk walking for 30 minutes daily",
+      "Engage in yoga sessions thrice a week",
+      "Swimming for 20-30 minutes twice a week",
+      "Kegel exercises daily",
+      "Regular pelvic floor exercises"
+    ],
+    "monitoringRecommendations": [
+      "Monitor blood sugar levels daily, maintaining under 140 mg/dL",
+      "Quarterly HbA1c check with a target below 7%",
+      "Annual kidney function test",
+      "Regular liver function tests",
+      "Annual urine test to track protein levels"
+    ]
+  },
+  "remark": {},
+  "summary": {
+    "description": "The tests suggest elevated blood sugar levels indicating uncontrolled diabetes, elevated liver enzymes pointing towards possible liver dysfunction, and irregularities in urine analysis potentially indicating urinary tract issues. The patient is advised to follow strict diet and exercise routines, and further diagnostic evaluation is recommended."
+  },
+  "referenceLinks": {
+    "diabetesManagement": "https://www.diabetes.org/healthy-living",
+    "liverHealth": "https://www.liverfoundation.org/",
+    "urinaryHealth": "https://www.kidney.org/atoz/content/urinary-tract-health"
+  }
+}

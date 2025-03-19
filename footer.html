@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-bg {
+            width: 100%;
+            height: 100px;
+            /* background-image: url('header-gradient.png');
+             */
+             background-color: #edecea;
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Poppins;
+            font-size: 15px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 16px;
+            padding: 5px 40px 0 40px;
+            color: #2D2D2D;
+            box-sizing: border-box;
+            display: -webkit-box; 
+            -webkit-box-pack: justify;
+        }
+      
+        .footer-img {
+            padding-top: 1%;
+        }
+
+        .page-number{
+            padding-top: 4%;
+        }
+        
+    </style>
+</head>
+<body onload="getPdfInfo()">
+    {%if reportDetails.isCustomHeader==true %}
+    <div style="width: 100%;
+            height: 100px;">
+        <img style="width:200px;height:50px;" src="image.png" alt="">
+    </div>
+    {%else%}
+    <div class="footer-bg">
+        <div class="footer-img">
+            <img style="width:250px;height:62px; position:relative; right:15px;"  src="Footer1.png" alt="footer">
+        </div>
+        <div>
+            <h2 style="font-size: 20px; font-weight: lighter; position: relative; top:40px; right:10px;">Personalised Health Analytics Report</h2>
+        </div>
+        <div class="page-number">
+            Page <span id="pdfkit_page_current">1</span> of <span id="pdfkit_page_count">1</span>
+        </div>
+    </div>
+    {%endif%}
+
+   
+
+    <script>
+        var pdfInfo = {};
+        var x = document.location.search.substring(1).split('&');
+        for (var i in x) {
+            var z = x[i].split('=', 2);
+            pdfInfo[z[0]] = unescape(z[1]);
+        }
+        function getPdfInfo() {
+            var page = pdfInfo.page || 1;
+            var pageCount = pdfInfo.topage || 1;
+            document.getElementById('pdfkit_page_current').textContent = page;
+            document.getElementById('pdfkit_page_count').textContent = pageCount;
+        }
+    </script>
+
+</body>
+</html>

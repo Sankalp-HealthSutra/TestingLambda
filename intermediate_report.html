@@ -1,0 +1,2615 @@
+<!DOCTYPE html>
+<html>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+        <title>Report</title>
+        <style>
+        * {
+    font-family: "Poppins";
+    font-weight: 500;
+    font-size: 16px;
+}
+
+body {
+    margin: 20px;
+}
+
+h1 {
+    color: #4CAF50;
+}
+
+h2 {
+    color: #0367A6;
+    font-size: 3.25rem;
+  
+}
+
+.testCategory {
+    color: #F2811D;
+    font-size: 1.7rem;
+    margin-top: -0.25rem;
+}
+
+.table-container {
+    overflow: hidden; /* Ensure elements inside the container are cleared */
+    margin-top: -1.5rem;
+}
+
+.column {
+    width: 48%; /* Each column takes 48% of the container */
+    float: left; /* Floats the columns side by side */
+    margin-right: 2%; /* Adds space between columns */
+}
+
+.table-card {
+    width: 100%; /* Ensures the cards occupy the full width of the column */
+    margin: 8px 8px; /* Adds space between cards */
+    padding: 0rem 0.5rem;
+    height: 35%;
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid #F2F2F2;
+    background-color: white;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.table-card .test-name {
+    border-radius: 12px 12px 0px 0px;
+    background-color: #ECF9EF;
+    height: 2.5rem;
+    display: -webkit-box; 
+    -webkit-box-pack: center;
+    margin-top: 0.5rem;
+}
+
+.test-name h2 {
+    font-size: 0.7rem;
+    color: #2D2D2D;
+    font-weight: 600;
+    text-align: center;
+    align-items: center !important;
+}
+
+.table-card .value {
+    position: relative;
+    width: 100%;
+    height: 5rem;
+}
+
+.value::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    border-radius: 0px 4px 4px 0px;
+    left: 0;
+    width: 0.20rem;
+    height: 50%;  
+    background-color:#13B235 ;
+}
+.wide-card {
+    width: 20%; /* Takes two table cells */
+    display: table-cell;
+}
+.table-card .num-value {
+    font-size: 1.45rem;
+    color: #13B235;
+    font-weight: 800;
+    margin: 0;
+    float: left;
+    padding: 0.25rem;
+    padding-left: 2rem;
+    white-space: nowrap;
+    
+}
+
+.table-card .unit {
+    font-size: 1rem;
+    color: #818181;
+    float: right;
+    padding-right: 2rem;
+    white-space: nowrap;
+}
+
+.table-card .reference {
+    height: 2.5rem;
+    border-radius: 0px 0px 12px 12px;
+    background-color: #ECF9EF;
+    color: #2D2D2D;
+    font-size: 0.7rem;
+    display: -webkit-box; 
+    -webkit-box-pack: center;
+    margin-bottom: 0.5rem;
+}
+
+.reference h3 {
+    font-size: 0.6rem;
+    color: #2D2D2D;
+    font-weight: 600;
+    text-align: center;
+}
+
+.value h1{
+    position: relative;
+    right:1rem;
+}
+
+.overall-tables {
+    border: solid 2px #F2F2F2;
+    border-radius: 16px; 
+    margin: 3rem 0.75rem 0 0.75rem; 
+    position: relative;
+    bottom:4rem;
+    right:1rem;
+    padding: 10px; 
+    vertical-align: top;
+}
+
+.overall-tables h3 {
+    color: #0367A6; font-size: 20px;
+}
+
+.overall-tables table {
+    border: 2px solid #F2F2F2; 
+    border-collapse: collapse; 
+    width: 100%; 
+    border-radius: 12px; 
+    overflow: hidden;
+}
+
+.test-section {
+    /* Adds a page break after each test section */
+}
+
+.clearfix {
+    clear: both; /* Clears floats so the container wraps around floated items */
+}
+
+        </style>
+    </head>
+    
+    <title>Medical Report</title>
+    <style>
+        .icon-container svg {
+    display: block; /* Make the SVG a block-level element */
+    margin: 0 auto 8px; /* Center the SVG horizontally and add space below */
+}
+
+.icon-container h3 {
+    margin: 0; /* Remove default margin from h3 */
+}
+      body,html{
+        line-height: normal;
+        font-style: normal;
+        padding-top: 10px;
+        padding-left: 13px;
+        
+        font-family: 'poppins, sans-serif';
+        /* background-image: url("background.png"); */
+      }
+    
+        .test-section { 
+            /* Adds a page break after each test section */
+            position: relative;
+            top: 0rem;
+
+        }
+        .test-section img{
+            width: 466px;
+            height: 466px;
+        }
+
+        .table-card {
+            width: 22%;
+        }
+
+        .test-details{
+            color:#0367A6;
+            font-family: Poppins;
+            font-style: normal;
+            text-align: left;
+            font-weight:800;
+            line-height: 150%; /* 48px */
+        }
+
+        .container{
+            padding: 0;
+        }
+
+        .status-normal .test-name,
+        .status-normal .reference {
+            background-color: #ECF9EF;
+        }
+        .status-normal .num-value,
+        .status-normal .status-indicator {
+            color: #13B235;
+        }
+        .status-normal .value::before {
+            background-color: #13B235;
+        }
+
+        .status-low .test-name,
+        .status-low .reference {
+            background-color: #FEF9EB;
+        }
+        .status-low .num-value,
+        .status-low .status-indicator{
+            color: #FF0000;
+        }
+        .status-low .value::before {
+            background-color: #FF0000;
+        }
+
+        .status-high .test-name,
+        .status-high .reference {
+            background-color: #FEECEE;
+        }
+        .status-high .num-value,
+        .status-high .status-indicator{
+            color: #FF0000;
+        
+        }
+        .status-high .value::before {
+            background-color: #FF0000;
+        }
+
+        .status-indicator {
+            display: block;
+            font-size: 1rem;
+            font-weight: bold;
+            position: relative;
+            top:25px;
+            right:3rem;
+        }
+        
+        .card {
+            background: #ffffff;
+            right: 1.6rem;
+            float: right;
+            border-radius: 12px;
+            padding: 20px 0 20px 0;
+            width: 100%;
+            margin: 20px auto;
+    }
+
+    .card h2 {
+      margin: 0 0 20px 0;
+      font-size: 2rem;
+      color: #0367A6;
+      margin-left: 0;
+    }
+
+    .details {
+      overflow: hidden;
+      border: 1px solid #F2F2F2;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 0 0.75rem;
+    }
+
+    .detail-item {
+      /* float: left; */
+      width: 100%; /* Half the width with space for margin */
+      margin: 0 1% 16px 0;
+    }
+
+    .icon {
+      width: 36px;
+      height: 36px;
+      background: #EFFAFF;
+      border-radius: 50%;
+      float: left;
+      margin-right: 10px;
+    }
+
+    .icon img {
+      width: 20px;
+      height: 20px;
+      margin: 8px;
+    }
+
+    .detail-text {
+      font-size: 20px;
+      color: #818181;
+      line-height: 1.4;
+      overflow: hidden;
+    }
+
+    .detail-text span {
+      font-weight: bold;
+      display: block;
+      margin-top: 4px;
+      color: #2D2D2D;
+    }
+      
+    </style>
+</head>
+<body >
+    <div class="container" style=" margin-top: -2rem;">
+
+        <div>
+        <!-- patient Details -->
+
+        <div style="overflow: auto;">
+            <div class="card" style="margin-top: -0.2rem; float: left; width: 48%;">
+                    <h2 style="font-weight: bold;">Patient Details</h2>
+                    <div class="details" style="position:relative; right: 12px;">
+                            <div class="detail-item">
+                                    <div class="icon">
+                                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                                                    <path d="M10.5 15.5V23.625C10.5 23.7908 10.5658 23.9497 10.6831 24.0669C10.8003 24.1842 10.9592 24.25 11.125 24.25H24.875C25.0408 24.25 25.1997 24.1842 25.3169 24.0669C25.4342 23.9497 25.5 23.7908 25.5 23.625V15.5L18 10.5L10.5 15.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M25.5 15.5L19.3637 19.875H16.6363L10.5 15.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                            Name <span>SHANTANU RAJPATHAK</span>
+                                    </div>
+                            </div>
+                            
+                            <div class="detail-item">
+                                    <div class="icon">
+                                            <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect x="0.5" width="36" height="36" rx="18" fill="#EFFAFF"/>
+                                                    <path d="M15.7247 17.7512C16.373 19.0766 17.4474 20.1461 18.7758 20.7884C18.8729 20.8344 18.9804 20.8544 19.0877 20.8463C19.1949 20.8382 19.2982 20.8023 19.3874 20.7421L21.3433 19.4379C21.4298 19.3802 21.5293 19.345 21.6328 19.3355C21.7364 19.326 21.8407 19.3424 21.9362 19.3834L25.5954 20.9516C25.7197 21.0044 25.8234 21.0962 25.8911 21.2131C25.9587 21.33 25.9865 21.4657 25.9702 21.5998C25.8546 22.5048 25.413 23.3366 24.7282 23.9395C24.0434 24.5424 23.1624 24.875 22.25 24.875C19.4321 24.875 16.7296 23.7556 14.737 21.763C12.7444 19.7705 11.625 17.0679 11.625 14.25C11.625 13.3377 11.9577 12.4566 12.5605 11.7718C13.1634 11.087 13.9952 10.6454 14.9002 10.5298C15.0343 10.5136 15.17 10.5413 15.2869 10.609C15.4038 10.6766 15.4956 10.7803 15.5484 10.9046L17.118 14.567C17.1586 14.6617 17.1751 14.765 17.1661 14.8677C17.1572 14.9703 17.1229 15.0692 17.0665 15.1554L15.7668 17.1414C15.7076 17.2307 15.6726 17.3338 15.6653 17.4407C15.6579 17.5476 15.6784 17.6546 15.7247 17.7512V17.7512Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                            Phone Number <span>N/A</span>
+                                    </div>
+                            </div>
+                           
+                            <div class="detail-item">
+                                    <div class="icon">
+                                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                                                    <path d="M18 18.625C19.3807 18.625 20.5 17.5057 20.5 16.125C20.5 14.7443 19.3807 13.625 18 13.625C16.6193 13.625 15.5 14.7443 15.5 16.125C15.5 17.5057 16.6193 18.625 18 18.625Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M24.25 16.125C24.25 21.75 18 26.125 18 26.125C18 26.125 11.75 21.75 11.75 16.125C11.75 14.4674 12.4085 12.8777 13.5806 11.7056C14.7527 10.5335 16.3424 9.875 18 9.875C19.6576 9.875 21.2473 10.5335 22.4194 11.7056C23.5915 12.8777 24.25 14.4674 24.25 16.125V16.125Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                            Address <span>N/A</span>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+
+            <div class="card" style="float: right; width: 50%;  position: relative; bottom:23px; ">
+                    <h2 style="font-weight: bold; position:relative; left:1rem;">Report Details</h2>
+                    <div class="details" >
+                            <div class="detail-item">
+                                    <div class="icon">
+                                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="40" height="40" rx="20" fill="#EFFAFF"/>
+                                                    <path d="M23.125 27.5H14.375C14.2092 27.5 14.0503 27.4342 13.9331 27.3169C13.8158 27.1997 13.75 27.0408 13.75 15.625C13.75 15.4592 13.8158 15.3003 13.9331 15.1831C14.0503 15.0658 14.2092 15 14.375 15H20.625L23.75 18.125V26.875C23.75 27.0408 23.6842 27.1997 23.5669 27.3169C23.4497 27.4342 23.2908 27.5 23.125 27.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M16.25 15V13.125C16.25 12.9592 16.3158 12.8003 16.4331 12.6831C16.5503 12.5658 16.7092 12.5 16.875 12.5H23.125L26.25 15.625V24.375C26.25 24.5408 26.1842 24.6997 26.0669 24.8169C25.9497 24.9342 25.7908 25 25.625 25H23.75" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M16.875 21.875H20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M16.875 24.375H20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                            Collection Date/Time 
+                                            <span>
+                                                
+                                                        06/03/2021 11:32
+                                                
+                                            </span>
+                                    </div>
+                            </div>
+                            <div class="detail-item">
+                                    <div class="icon">
+                                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="40" height="40" rx="20" fill="#EFFAFF"/>
+                                                    <path d="M23.125 27.5H14.375C14.2092 27.5 14.0503 27.4342 13.9331 27.3169C13.8158 27.1997 13.75 27.0408 13.75 15.625C13.75 15.4592 13.8158 15.3003 13.9331 15.1831C14.0503 15.0658 14.2092 15 14.375 15H20.625L23.75 18.125V26.875C23.75 27.0408 23.6842 27.1997 23.5669 27.3169C23.4497 27.4342 23.2908 27.5 23.125 27.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M16.25 15V13.125C16.25 12.9592 16.3158 12.8003 16.4331 12.6831C16.5503 12.5658 16.7092 12.5 16.875 12.5H23.125L26.25 15.625V24.375C26.25 24.5408 26.1842 24.6997 26.0669 24.8169C25.9497 24.9342 25.7908 25 25.625 25H23.75" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M16.875 21.875H20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M16.875 24.375H20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                            Receiving Date/Time 
+                                            <span>
+                                                    
+                                                            06/03/2021 11:41
+                                                    
+                                            </span>
+                                    </div>
+                            </div>
+                       
+                            <div class="detail-item">
+                                    <div class="icon">
+                                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                                                    <path d="M18 17.0625V21.4375" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M20.1875 19.25H15.8125" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M24.875 13.625H11.125C10.7798 13.625 10.5 13.9048 10.5 14.25V24.25C10.5 24.5952 10.7798 24.875 11.125 24.875H24.875C25.2202 24.875 25.5 24.5952 25.5 24.25V14.25C25.5 13.9048 25.2202 13.625 24.875 13.625Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                                    <path d="M21.125 13.625V12.375C21.125 12.0435 20.9933 11.7255 20.7589 11.4911C20.5245 11.2567 20.2065 11.125 19.875 11.125H16.125C15.7935 11.125 15.4755 11.2567 15.2411 11.4911C15.0067 11.7255 14.875 12.0435 14.875 12.375V13.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                    </div>
+                                    <div class="detail-text">
+                                            Doctor Name
+                                            <span >
+                                                    None
+                                            </span>
+                                    </div>
+                            </div>
+                    </div>
+            </div>
+        </div>
+        </div>
+         
+        </div>
+
+          <!-- Health Profile -->
+          <div style="min-height: 10px; position: relative; bottom: 4rem;">
+            <h2 style="font-size: 2rem; font-weight: bold; margin-bottom: 16px;">Health Profile</h2>
+            <div style="margin: 1rem 0.75rem 0 0.75rem; position: relative; right: 12px; border: solid 2px #F2F2F2; border-radius: 16px; padding: 24px;">
+              <ul class="health-profile-list">
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path d="M10.5 18H13.625L14.875 16.125L17.375 19.875L18.625 18H20.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10.1964 15.4995C10.1905 15.3959 10.1875 15.2919 10.1875 15.1875C10.1877 14.2485 10.513 13.3386 11.1082 12.6124C11.7035 11.8863 12.5318 11.3886 13.4525 11.2042C14.3732 11.0197 15.3293 11.1598 16.1583 11.6007C16.9874 12.0415 17.6381 12.7558 18 13.6223L18 13.6223C18.3619 12.7559 19.0126 12.0415 19.8417 11.6007C20.6707 11.1598 21.6268 11.0197 22.5475 11.2042C23.4682 11.3886 24.2965 11.8863 24.8918 12.6124C25.487 13.3386 25.8123 14.2485 25.8125 15.1875C25.8125 20.5 18 24.875 18 24.875C18 24.875 14.8793 23.1274 12.5826 20.5001" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Chronic Health Issues</h3>
+                      <h3 class="value1">None</h3>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path d="M11.75 19.25L19.25 11.75C20.6307 10.3693 22.8693 10.3693 24.25 11.75L24.25 11.75C25.6307 13.1307 25.6307 15.3693 24.25 16.75L16.75 24.25C15.3693 25.6307 13.1307 25.6307 11.75 24.25L11.75 24.25C10.3693 22.8693 10.3693 20.6307 11.75 19.25Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.5 15.5L20.5 20.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.5059 16.7554L22.4134 14.9129" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Current Medications</h3>
+                      <h3 class="value1">Amlodipine</h3>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path d="M18 22.0625C19.7259 22.0625 21.125 20.6634 21.125 18.9375C21.125 17.2116 19.7259 15.8125 18 15.8125C16.2741 15.8125 14.875 17.2116 14.875 18.9375C14.875 20.6634 16.2741 22.0625 18 22.0625Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M23.3125 17.0625C24.0403 17.0619 24.7582 17.231 25.4092 17.5565C26.0602 17.8819 26.6263 18.3546 27.0626 18.9372" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8.9375 18.9373C9.37378 18.3548 9.93992 17.882 10.5909 17.5565C11.2419 17.231 11.9599 17.0619 12.6877 17.0625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.502 24.8749C13.9125 24.0317 14.5519 23.3208 15.3471 22.8235C16.1423 22.3262 17.0613 22.0625 17.9993 22.0625C18.9372 22.0625 19.8562 22.3262 20.6514 22.8235C21.4466 23.3208 22.086 24.0316 22.4966 24.8749" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.687 17.0625C12.2127 17.0624 11.7482 16.9274 11.3477 16.6732C10.9472 16.4189 10.6273 16.056 10.4254 15.6268C10.2234 15.1976 10.1478 14.7198 10.2072 14.2492C10.2667 13.7786 10.4588 13.3346 10.7611 12.9691C11.0634 12.6036 11.4635 12.3316 11.9146 12.185C12.3657 12.0383 12.8492 12.023 13.3087 12.1409C13.7682 12.2588 14.1846 12.5049 14.5094 12.8506C14.8342 13.1963 15.054 13.6272 15.1431 14.0932" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.8574 14.0932C20.9464 13.6272 21.1662 13.1962 21.491 12.8504C21.8158 12.5046 22.2323 12.2584 22.6918 12.1405C23.1514 12.0226 23.635 12.0379 24.0861 12.1845C24.5373 12.3312 24.9374 12.6032 25.2398 12.9687C25.5422 13.3343 25.7343 13.7783 25.7937 14.249C25.8532 14.7197 25.7775 15.1976 25.5755 15.6268C25.3735 16.0561 25.0536 16.419 24.653 16.6732C24.2525 16.9274 23.7879 17.0625 23.3134 17.0625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Family History</h3>
+                      <h3 class="value1">Hypertension</h3>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path d="M24.875 18.625C24.875 22.6488 19.0594 24.0292 18.1258 24.2249C18.0428 24.2423 17.9572 24.2423 17.8742 24.2249C16.9406 24.0292 11.125 22.6488 11.125 18.625V14.0628C11.125 13.9345 11.1645 13.8093 11.2381 13.7042C11.3117 13.5991 11.4158 13.5192 11.5364 13.4754L17.7864 11.2027C17.9244 11.1525 18.0756 11.1525 18.2136 11.2027L24.4636 13.4754C24.5842 13.5192 24.6883 13.5991 24.7619 13.7042C24.8355 13.8093 24.875 13.9345 24.875 14.0628V18.625Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.875 16.75H21.125" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.875 19.25H21.125" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M24.6719 19.875H25.4992C25.9965 19.875 26.4734 19.6775 26.8251 19.3258C27.1767 18.9742 27.3742 18.4973 27.3742 18V16.125C27.3742 15.6277 27.1767 15.1508 26.8251 14.7992C26.4734 14.4475 25.9965 14.25 25.4992 14.25H24.8742" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11.3274 19.875H10.5C10.0027 19.875 9.52581 19.6775 9.17417 19.3258C8.82254 18.9742 8.625 18.4973 8.625 18V16.125C8.625 15.6277 8.82254 15.1508 9.17417 14.7992C9.52581 14.4475 10.0027 14.25 10.5 14.25H11.125" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Allergy (If any)</h3>
+                      <h3 class="value1">None</h3>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path d="M11.8572 15.3928C11.3884 14.9239 11.125 14.288 11.125 13.625C11.125 12.962 11.3884 12.3261 11.8572 11.8572C12.3261 11.3884 12.962 11.125 13.625 11.125C14.288 11.125 14.9239 11.3884 15.3928 11.8572L24.1428 20.6072C24.6116 21.0761 24.875 21.712 24.875 22.375C24.875 23.038 24.6116 23.6739 24.1428 24.1428C23.6739 24.6116 23.038 24.875 22.375 24.875C21.712 24.875 21.0761 24.6116 20.6072 24.1428L11.8572 15.3928Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.6072 11.8572C21.0761 11.3884 21.712 11.125 22.375 11.125C22.7033 11.125 23.0284 11.1897 23.3317 11.3153C23.635 11.4409 23.9106 11.6251 24.1428 11.8572C24.3749 12.0894 24.5591 12.365 24.6847 12.6683C24.8103 12.9716 24.875 13.2967 24.875 13.625C24.875 13.9533 24.8103 14.2784 24.6847 14.5817C24.5591 14.885 24.3749 15.1606 24.1428 15.3928L15.3928 24.1428C15.1606 24.3749 14.885 24.5591 14.5817 24.6847C14.2784 24.8103 13.9533 24.875 13.625 24.875C13.2967 24.875 12.9716 24.8103 12.6683 24.6847C12.365 24.5591 12.0894 24.3749 11.8572 24.1428C11.3884 23.6739 11.125 23.038 11.125 22.375C11.125 21.712 11.3884 21.0761 11.8572 20.6072L20.6072 11.8572Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path opacity="0.5" d="M18 18.3125C18.1726 18.3125 18.3125 18.1726 18.3125 18C18.3125 17.8274 18.1726 17.6875 18 17.6875C17.8274 17.6875 17.6875 17.8274 17.6875 18C17.6875 18.1726 17.8274 18.3125 18 18.3125Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 18.7812C18.4315 18.7812 18.7812 18.4315 18.7812 18C18.7812 17.5685 18.4315 17.2188 18 17.2188C17.5685 17.2188 17.2188 17.5685 17.2188 18C17.2188 18.4315 17.5685 18.7812 18 18.7812Z" fill="#0367A6"/>
+                            </svg>
+                            
+                            
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Surgery (If any)</h3>
+                      <h3 class="value1">Bariatric (weight loss) surgery</h3>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="37" height="36" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0.5" width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path d="M18.5 25.5C22.6421 25.5 26 22.1421 26 18C26 13.8579 22.6421 10.5 18.5 10.5C14.3579 10.5 11 13.8579 11 18C11 22.1421 14.3579 25.5 18.5 25.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M19.8259 19.3259L22.0208 14.4709L17.1743 16.6742L15.1855 21.3145L19.8259 19.3259Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Weight</h3>
+                      <h3 class="value1">N/A</h3>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path d="M20.6831 10.3169L10.3169 20.6831C10.0729 20.9271 10.0729 21.3229 10.3169 21.5669L14.4331 25.6831C14.6771 25.9271 15.0729 25.9271 15.3169 25.6831L25.6831 15.3169C25.9271 15.0729 25.9271 14.6771 25.6831 14.4331L21.5669 10.3169C21.3229 10.0729 20.9271 10.0729 20.6831 10.3169Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18.3125 12.6875L20.8125 15.1875" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.5 15.5L18 18" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12.6875 18.3125L15.1875 20.8125" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Height</h3>
+                      <h3 class="value1">N/A</h3>
+                    </div>
+                  </div>
+                </li>
+                
+                <li class="profile-item">
+                  <div class="item-content">
+                    <div class="icon-container">
+                        <svg width="36" style="position:relative; bottom:2px;" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="36" height="36" rx="18" fill="#EFFAFF"/>
+                            <path 
+                                d="M18 10C16 12 12 16 12 21C12 24 14 26 18 26C22 26 24 24 24 21C24 16 20 12 18 10Z" 
+                                stroke="#0367A6" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 20H19M18 19V21" stroke="#0367A6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div class="info-container">
+                      <h3 class="label">Blood Group</h3>
+                      <h3 class="value1">A+</h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div style="clear: both;"></div>
+            </div>
+          </div>
+          
+          <style>
+            .health-profile-list {
+              list-style: none;
+              margin: 0;
+              padding: 0;
+              width: 100%;
+            }
+            
+            .profile-item {
+              float: left;
+              width: 48%;
+              
+            }
+            
+            .profile-item:nth-child(odd) {
+              clear: left;
+              margin-right: 2%;
+            }
+            
+            .profile-item:nth-child(even) {
+              margin-left: 2%;
+            }
+            
+            .item-content {
+              position: relative;
+              min-height: 70px;
+              /* Set a fixed height to ensure equal heights */
+            }
+            
+            .icon-container {
+              position: absolute;
+              left: 0;
+              top: 3px;
+              width: 40px;
+            }
+            
+            .info-container {
+              padding-left: 50px;
+              /* Provides space for the icon */
+            }
+            
+            .label {
+              color: #818181;
+              font-size: 20px;
+              margin: 0;
+              white-space: nowrap;
+            }
+            
+            .value1 {
+              font-size: 17px;
+              margin: 0;
+              word-wrap: break-word;
+            }
+          </style>
+            
+            <div style=" border-radius: 16px; margin: 3rem 0.75rem 0 0.75rem; right: 20px; width:90%; padding: 10px;position: relative; vertical-align: bottom; bottom: 3rem;page-break-after:always;">
+                <h3 style="color: #0367A6; font-size: 20px; margin-bottom: 0; padding-left:1px;">Note:</h3>
+                <p style="font-size: 17px; color: #2D2D2D;  text-align: justify; list-style: none;">
+                    A complete profile with accurate health information enables us to generate personalized smart reports tailored to your medical condition. By understanding your unique health metrics, we can provide insights and recommendations that are relevant for you, thereby helping you make informed decisions for a healthier life.
+                </p>
+            </div>
+        </div>
+            
+
+       
+
+
+<!-- Report Walkthrough -->
+<div style="font-family: Arial, sans-serif; border: 1px solid transparent; position: relative; bottom:30px; margin-top:1.5rem;">
+    <h1 style="color:#0367A6; font-size: 2rem; margin-bottom: 30px; font-weight: 800;">Report Walkthrough</h1>
+
+    <!-- Health Summary Section -->
+    <div style="display: table; width: 100%; margin-bottom: 25px;">
+        <div style="display: table-cell; vertical-align: middle; width: 24px; font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; margin-bottom: 20px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="20" fill="#EFFAFF"/>
+                <path d="M12.5 20H15.625L16.875 18.125L19.375 21.875L20.625 20H22.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.1964 17.4995C12.1905 17.3959 12.1875 17.2919 12.1875 17.1875C12.1877 16.2485 12.513 15.3386 13.1082 14.6124C13.7035 13.8863 14.5318 13.3886 15.4525 13.2042C16.3732 13.0197 17.3293 13.1598 18.1583 13.6007C18.9874 14.0415 19.6381 14.7558 20 15.6223L20 15.6223C20.3619 14.7559 21.0126 14.0415 21.8417 13.6007C22.6707 13.1598 23.6268 13.0197 24.5475 13.2042C25.4682 13.3886 26.2965 13.8863 26.8918 14.6124C27.487 15.3386 27.8123 16.2485 27.8125 17.1875C27.8125 22.5 20 26.875 20 26.875C20 26.875 16.8793 25.1274 14.5826 22.5001" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+        </div>
+        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; ">
+            <span style="color: #0367A6;font-size: 30px;">01</span>
+            <a href="#" onclick="window.location.href='#01-health-summary'" style="color: #0367A6; margin-left: 12px;font-size: 30px; text-decoration: none;">Health Summary</a>
+        </div>
+       
+    </div>
+
+
+    <!-- Test Details Section -->
+    <div style="display: table; width: 100%;margin-bottom: 25px;">
+        <div style="display: table-cell; vertical-align: middle; width: 24px; font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; margin-bottom: 20px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="20" fill="#EFFAFF"/>
+                <path d="M26.2496 17.8125L17.3433 26.7188C17.0766 26.9855 16.7599 27.1971 16.4114 27.3415C16.0629 27.4858 15.6893 27.5601 15.3121 27.5601C14.9348 27.5601 14.5613 27.4858 14.2128 27.3415C13.8642 27.1971 13.5476 26.9855 13.2808 26.7188V26.7188C13.0141 26.452 12.8025 26.1353 12.6581 25.7868C12.5138 25.4383 12.4395 25.0647 12.4395 24.6875C12.4395 24.3103 12.5138 23.9367 12.6581 23.5882C12.8025 23.2397 13.0141 22.923 13.2808 22.6562L23.4371 12.5L28.1246 17.1875L26.2496 17.8125Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.3125 20.625C15.3125 20.625 16.875 19.375 19.375 20.625C21.875 21.875 23.4375 20.625 23.4375 20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+        </div>
+        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; 
+        
+        ">
+            <span style="color: #0367A6; font-size: 28px;">02</span>
+            <span style="color: #0367A6; margin-left: 8px;font-size: 28px;">Test Details & Suggestions</span>
+        </div>
+        
+    </div>
+
+    <!-- Insights Section -->
+    <div style="display: table; width: 100%;margin-bottom: 25px;">
+        <div style="display: table-cell; vertical-align: middle; width: 24px; font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; margin-bottom: 20px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="20" fill="#EFFAFF"/>
+                <path d="M26.2496 17.8125L17.3433 26.7188C17.0766 26.9855 16.7599 27.1971 16.4114 27.3415C16.0629 27.4858 15.6893 27.5601 15.3121 27.5601C14.9348 27.5601 14.5613 27.4858 14.2128 27.3415C13.8642 27.1971 13.5476 26.9855 13.2808 26.7188V26.7188C13.0141 26.452 12.8025 26.1353 12.6581 25.7868C12.5138 25.4383 12.4395 25.0647 12.4395 24.6875C12.4395 24.3103 12.5138 23.9367 12.6581 23.5882C12.8025 23.2397 13.0141 22.923 13.2808 22.6562L23.4371 12.5L28.1246 17.1875L26.2496 17.8125Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M15.3125 20.625C15.3125 20.625 16.875 19.375 19.375 20.625C21.875 21.875 23.4375 20.625 23.4375 20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+        </div>
+        <div style="display: table-cell; vertical-align: top; padding-left: 10px; font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; 
+        
+        ">
+            <span style="color: #0367A6; font-size: 28px;">03</span>
+            <span style="color: #0367A6; margin-left: 8px;font-size: 28px;">Diet, Exercise and Health Monitoring Suggestions</span>
+        </div>
+       
+    </div>
+
+    <!-- Lab Report Section -->
+    <div style="display: table; width: 100%; margin-bottom: 25px;">
+        <div style="display: table-cell; vertical-align: middle; width: 24px; font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; margin-bottom: 20px;">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="40" height="40" rx="20" fill="#EFFAFF"/>
+                <path d="M17.5 22.5H13.125C12.9592 22.5 12.8003 22.4342 12.6831 22.3169C12.5658 22.1997 12.5 22.0408 12.5 21.875V18.125C12.5 17.9592 12.5658 17.8003 12.6831 17.6831C12.8003 17.5658 12.9592 17.5 13.125 17.5H17.5V13.125C17.5 12.9592 17.5658 12.8003 17.6831 12.6831C17.8003 12.5658 17.9592 12.5 18.125 12.5H21.875C22.0408 12.5 22.1997 12.5658 22.3169 12.6831C22.4342 12.8003 22.5 12.9592 22.5 13.125V17.5H26.875C27.0408 17.5 27.1997 17.5658 27.3169 17.6831C27.4342 17.8003 27.5 17.9592 27.5 18.125V21.875C27.5 22.0408 27.4342 22.1997 27.3169 22.3169C27.1997 22.4342 27.0408 22.5 26.875 22.5H22.5V26.875C22.5 27.0408 22.4342 27.1997 22.3169 27.3169C22.1997 27.4342 22.0408 27.5 21.875 27.5H18.125C17.9592 27.5 17.8003 27.4342 17.6831 27.3169C17.5658 27.1997 17.5 27.0408 17.5 26.875V22.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                
+        </div>
+        <div style="display: table-cell; vertical-align: top; padding-left: 10px;font-family: Poppins;
+        font-size: 50px;
+        font-style: normal;
+        font-weight: bold;
+        line-height: 20px; /*">
+            <span style="color: #0367A6; font-size: 28px;">04</span>
+            <span style="color: #0367A6; margin-left: 8px;font-size: 28px;">Original Lab Report</span>
+        </div>
+       
+    </div>
+
+   
+</div>
+
+<div style="display: table; width: 100%; table-layout: fixed; margin-top: 1rem; border-spacing: 0.75rem; position: relative; right:12px; bottom:30px">
+    <!-- What to expect section -->
+    <div style="display: table-cell; border: solid 2px #F2F2F2; border-radius: 16px; padding: 16px; vertical-align: top;">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+            <rect width="40" height="40" rx="20" fill="#EFFAFF"/>
+            <path d="M23.125 27.5H14.375C14.2092 27.5 14.0503 27.4342 13.9331 27.3169C13.8158 27.1997 13.75 27.0408 13.75 26.875V15.625C13.75 15.4592 13.8158 15.3003 13.9331 15.1831C14.0503 15.0658 14.2092 15 14.375 15H20.625L23.75 18.125V26.875C23.75 27.0408 23.6842 27.1997 23.5669 27.3169C23.4497 27.4342 23.2908 27.5 23.125 27.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.25 15V13.125C16.25 12.9592 16.3158 12.8003 16.4331 12.6831C16.5503 12.5658 16.7092 12.5 16.875 12.5H23.125L26.25 15.625V24.375C26.25 24.5408 26.1842 24.6997 26.0669 24.8169C25.9497 24.9342 25.7908 25 25.625 25H23.75" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.875 21.875H20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M16.875 24.375H20.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+            
+        <h3 style="margin: 0.5rem 0; font-size: 18px; color: #0367A6; display: inline-block; position:relative; bottom:12px;">
+            What to expect from this report 
+        </h3>
+        <ul style="font-size: 17px; color: #2D2D2D; list-style-type: none; padding-left: 0; position:relative; bottom:15px;" >
+            <li style=" text-indent: -2.1rem; padding-left: 2.1rem;">
+                <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span style="display: inline;">Analysis and explanation of your health check results.</span>
+            </li>
+            <li style=" text-indent: -1.5rem; padding-left: 1.5rem;">
+                <svg style= " position:relative; top:3px; vertical-align: top; margin-right: 8px;" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Diet dos & don'ts and other guidance.
+            </li>
+            <li style="text-indent: -1.5rem; padding-left: 1.5rem;">
+                <svg style="position:relative; top:3px; vertical-align: top; margin-right: 8px;" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Exercise recommendations.
+            </li>
+            <li style=" text-indent: -1.5rem; padding-left: 1.5rem;">
+                <svg style="position:relative; top:3px; vertical-align: top; margin-right: 8px;" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Health Monitoring Suggestions.
+            </li>
+        </ul>
+        
+    </div>
+
+    <!-- Always consult section -->
+    <div style="display: table-cell; border: solid 2px #F2F2F2; border-radius: 16px; padding: 16px; vertical-align: top;">
+        <svg width="41" height="40" viewBox="0 0 41 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block;">
+            <rect x="0.5" width="40" height="40" rx="20" fill="#EFFAFF"/>
+            <path d="M20.5 19.0625V23.4375" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22.6875 21.25H18.3125" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M27.375 15.625H13.625C13.2798 15.625 13 15.9048 13 16.25V26.25C13 26.5952 13.2798 26.875 13.625 26.875H27.375C27.7202 26.875 28 26.5952 28 26.25V16.25C28 15.9048 27.7202 15.625 27.375 15.625Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M23.625 15.625V14.375C23.625 14.0435 23.4933 13.7255 23.2589 13.4911C23.0245 13.2567 22.7065 13.125 22.375 13.125H18.625C18.2935 13.125 17.9755 13.2567 17.7411 13.4911C17.5067 13.7255 17.375 14.0435 17.375 14.375V15.625" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+            
+        <h3 style="margin: 0.5rem 0; font-size: 18px; color: #0367A6; display:inline-block; position:relative; bottom:12px;">
+            Always consult your Doctor 
+        </h3>
+        <ul style="font-size: 17px; color: #2D2D2D; list-style-type: none; padding-left: 0; position:relative; bottom:15px;">
+            <li style=" text-indent: -2.1rem; padding-left: 2.1rem;">
+                <svg style="position:relative; top:3px; vertical-align: top; margin-right: 6px;" width="20" height="20" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                This Smart Health Report helps you understand your results but is not a substitute for a doctor.
+                Please consult your doctor before following any suggestions provided in this report.
+            </li>
+        </ul>
+        
+    </div>
+</div>
+
+
+<!-- Health Summary -->
+ <div style="page-break-before: always; border: 1px solid transparent;">
+    <h2 style="font-size: 2rem; margin: 1rem auto 0 auto; font-weight: 800;">01. Health Summary</h2>
+    
+ </div>
+ <div style="color: #575757;position: relative;">
+   <span> <h3 style="display: inline-block;font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;"><svg xmlns="http://www.w3.org/2000/svg" style="position:relative; top:2px;" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+<path d="M 42.875 8.625 C 42.84375 8.632813 42.8125 8.644531 42.78125 8.65625 C 42.519531 8.722656 42.292969 8.890625 42.15625 9.125 L 21.71875 40.8125 L 7.65625 28.125 C 7.410156 27.8125 7 27.675781 6.613281 27.777344 C 6.226563 27.878906 5.941406 28.203125 5.882813 28.597656 C 5.824219 28.992188 6.003906 29.382813 6.34375 29.59375 L 21.25 43.09375 C 21.46875 43.285156 21.761719 43.371094 22.050781 43.328125 C 22.339844 43.285156 22.59375 43.121094 22.75 42.875 L 43.84375 10.1875 C 44.074219 9.859375 44.085938 9.425781 43.875 9.085938 C 43.664063 8.746094 43.269531 8.566406 42.875 8.625 Z" fill="green" stroke="green" stroke-width="4"></path>
+</svg>
+        Normal
+        </h3>
+  
+    <span><h3 style="display: inline-block;margin-left:1.3rem;font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;"><svg width="20" height="20" style="position:relative; top:2px;" viewBox="0 0 32 32" fill="red" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.4141 16L25.707 7.70712C25.8944 7.51954 25.9996 7.26526 25.9995 7.00015C25.9994 6.73505 25.894 6.48083 25.7066 6.29338C25.5191 6.10592 25.2649 6.00057 24.9998 6.00049C24.7347 6.00041 24.4804 6.10559 24.2928 6.29293L15.9999 14.5858L7.70703 6.29293C7.51945 6.10559 7.26517 6.00041 7.00006 6.00049C6.73496 6.00057 6.48074 6.10592 6.29329 6.29338C6.10583 6.48083 6.00048 6.73505 6.0004 7.00015C6.00032 7.26526 6.1055 7.51954 6.29284 7.70712L14.5858 16L6.29284 24.2929C6.19989 24.3858 6.12614 24.496 6.07581 24.6174C6.02548 24.7387 5.99955 24.8688 5.99951 25.0002C5.99947 25.1315 6.02532 25.2616 6.07557 25.383C6.12583 25.5044 6.1995 25.6147 6.2924 25.7076C6.38529 25.8005 6.49558 25.8741 6.61696 25.9244C6.73834 25.9746 6.86843 26.0005 6.99981 26.0004C7.13118 26.0004 7.26125 25.9745 7.3826 25.9241C7.50395 25.8738 7.61419 25.8001 7.70703 25.7071L15.9999 17.4142L24.2928 25.7071C24.4804 25.8945 24.7347 25.9996 24.9998 25.9996C25.2649 25.9995 25.5191 25.8941 25.7066 25.7067C25.894 25.5192 25.9994 25.265 25.9995 24.9999C25.9996 24.7348 25.8944 24.4805 25.707 24.2929L17.4141 16Z" fill="red" stroke="red" stroke-width="4"/>
+</svg>
+
+       Abnormal
+        </h3>
+   
+</div>
+
+<div style="position: relative; margin-top: 1rem; ">
+    
+        <div class="icon-container" style="display: inline-block; height: 5.5rem; width: 22%; border: solid 2px  #13B235 ; background-color: white; border-radius: 16px; text-align: center; margin: 10px; vertical-align: top; position: relative;">
+            
+            <!-- SVG for tick -->
+            <svg style="position:absolute; right:12px; top:3px; font-weight:bold;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                <path d="M 42.875 8.625 C 42.84375 8.632813 42.8125 8.644531 42.78125 8.65625 C 42.519531 8.722656 42.292969 8.890625 42.15625 9.125 L 21.71875 40.8125 L 7.65625 28.125 C 7.410156 27.8125 7 27.675781 6.613281 27.777344 C 6.226563 27.878906 5.941406 28.203125 5.882813 28.597656 C 5.824219 28.992188 6.003906 29.382813 6.34375 29.59375 L 21.25 43.09375 C 21.46875 43.285156 21.761719 43.371094 22.050781 43.328125 C 22.339844 43.285156 22.59375 43.121094 22.75 42.875 L 43.84375 10.1875 C 44.074219 9.859375 44.085938 9.425781 43.875 9.085938 C 43.664063 8.746094 43.269531 8.566406 42.875 8.625 Z" fill="green" stroke="green" stroke-width="4"></path>
+            </svg>
+            
+        <span style="display: inline-block;">
+            <div style="text-align: center; padding:2px; padding-top: 10px;">
+        <h3 style="font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; color: #0367A6;"> 
+
+        
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1281_3595)">
+            
+            <g mask="url(#mask0_1281_3595)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.1464 12.6086C9.19778 13.0196 9.57262 13.3112 9.98364 13.2598L10.1749 13.2359L10.1749 13.2359C12.5833 12.9348 14.3906 10.8876 14.3906 8.4604C14.3906 7.23099 15.3872 6.23436 16.6167 6.23436H21.7969V7.54686H17.3906C16.4586 7.54686 15.7031 8.30236 15.7031 9.23436V11.1094C15.7031 11.3355 15.8051 11.5495 15.9808 11.6919L17.7151 13.0982C18.0369 13.359 18.5092 13.3097 18.7701 12.988C19.0309 12.6662 18.9816 12.1939 18.6598 11.933L17.2031 10.7519V9.23436C17.2031 9.13079 17.287 9.04686 17.3906 9.04686H22.5469C22.9611 9.04686 23.2969 8.71107 23.2969 8.29686V5.48436C23.2969 5.07014 22.9611 4.73436 22.5469 4.73436H16.6167C14.5588 4.73436 12.8906 6.40257 12.8906 8.4604C12.8906 10.1311 11.6466 11.5403 9.98884 11.7475C9.98883 11.7475 9.98883 11.7475 9.98883 11.7475L9.79759 11.7714C9.38657 11.8228 9.09503 12.1976 9.1464 12.6086Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.42188 7.74878C9.83609 7.74878 10.1719 7.41299 10.1719 6.99878V5.48439C10.1719 4.86307 10.6755 4.35939 11.2969 4.35939H12.2344C12.6486 4.35939 12.9844 4.0236 12.9844 3.60939V1.45314H14.2969V3.60939C14.2969 4.0236 14.6327 4.35939 15.0469 4.35939H15.9844C16.6057 4.35939 17.1094 4.86307 17.1094 5.48439C17.1094 5.8986 17.4452 6.23439 17.8594 6.23439C18.2736 6.23439 18.6094 5.8986 18.6094 5.48439C18.6094 4.03467 17.4342 2.85939 15.9844 2.85939H15.7969V0.703139C15.7969 0.288925 15.4611 -0.0468612 15.0469 -0.0468612H12.2344C11.8202 -0.0468612 11.4844 0.288925 11.4844 0.703139V2.85939H11.2969C9.84709 2.85939 8.67188 4.03467 8.67188 5.48439V6.99878C8.67188 7.41299 9.00766 7.74878 9.42188 7.74878Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.703125 18.6094C0.703125 21.6124 3.13755 24.0469 6.14062 24.0469C9.1437 24.0469 11.5781 21.6124 11.5781 18.6094C11.5781 15.6063 9.1437 13.1719 6.14062 13.1719C3.13755 13.1719 0.703125 15.6063 0.703125 18.6094ZM6.14062 22.5469C3.96598 22.5469 2.20312 20.784 2.20312 18.6094C2.20312 16.4347 3.96598 14.6719 6.14062 14.6719C8.31527 14.6719 10.0781 16.4347 10.0781 18.6094C10.0781 20.784 8.31527 22.5469 6.14062 22.5469Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.46139 20.1562C3.66849 20.515 4.12719 20.6379 4.48591 20.4308L8.54537 18.087C8.90409 17.8799 9.027 17.4212 8.81989 17.0625C8.61278 16.7038 8.15409 16.5809 7.79537 16.788L3.7359 19.1317C3.37718 19.3388 3.25428 19.7975 3.46139 20.1562Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.98554 22.4543C10.2784 22.1614 10.2784 21.6865 9.98553 21.3936L3.35638 14.7645C3.06348 14.4716 2.58861 14.4716 2.29572 14.7645C2.00283 15.0574 2.00283 15.5323 2.29572 15.8252L8.92488 22.4543C9.21777 22.7472 9.69265 22.7472 9.98554 22.4543Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M6.71613 14.6669C7.11683 14.5619 7.3566 14.152 7.25166 13.7513C7.01249 12.8381 6.89062 11.9337 6.89062 11.1094C6.89062 9.19364 8.44362 7.64064 10.3594 7.64064C11.4487 7.64064 12.4198 8.14315 13.0573 8.9319C13.3177 9.25404 13.7899 9.30411 14.1121 9.04372C14.4342 8.78334 14.4843 8.31111 14.2239 7.98897C13.3148 6.8642 11.9223 6.14064 10.3594 6.14064C7.61519 6.14064 5.39062 8.36521 5.39062 11.1094C5.39062 12.0762 5.53276 13.1086 5.80059 14.1314C5.90553 14.5321 6.31543 14.7718 6.71613 14.6669Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6406 20.2031C12.6671 20.2031 11.7846 19.9177 10.9928 19.4245C10.6412 19.2054 10.1786 19.3129 9.95964 19.6645C9.74063 20.0161 9.84811 20.4786 10.1997 20.6976C11.2037 21.323 12.3578 21.7031 13.6406 21.7031C16.3229 21.7031 18.4017 20.0669 19.7734 17.9991C21.144 15.9331 21.8906 13.328 21.8906 11.1094C21.8906 9.83318 21.4052 8.67334 20.6184 7.7961C20.3418 7.48775 19.8676 7.46198 19.5593 7.73855C19.2509 8.01512 19.2252 8.4893 19.5017 8.79765C20.0544 9.41384 20.3906 10.2214 20.3906 11.1094C20.3906 13.0329 19.731 15.3496 18.5234 17.1699C17.317 18.9885 15.6458 20.2031 13.6406 20.2031Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.967 15.6043C12.2749 15.8814 12.7491 15.8565 13.0262 15.5486C13.8556 14.627 15.3006 14.627 16.13 15.5486C16.4071 15.8565 16.8814 15.8814 17.1892 15.6043C17.4971 15.3272 17.5221 14.853 17.245 14.5451C15.8197 12.9615 13.3366 12.9615 11.9113 14.5451C11.6342 14.853 11.6591 15.3272 11.967 15.6043Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M8.63983 7.78992C8.82158 7.8828 9.03334 7.89759 9.22624 7.83088C9.34704 7.7891 9.46737 7.75405 9.58778 7.72674C9.9294 7.64925 10.1719 7.34561 10.1719 6.99532V5.48435C10.1719 5.07761 10.3873 4.72041 10.714 4.52182C10.9034 4.40671 11.0321 4.21375 11.0657 3.99471C11.0993 3.77567 11.0344 3.55298 10.8882 3.38639C9.54875 1.85926 7.58099 0.890601 5.39062 0.890601C4.97641 0.890601 4.64062 1.22639 4.64062 1.6406V4.4531C4.64062 4.86731 4.97641 5.2031 5.39062 5.2031C6.74175 5.2031 7.89038 6.10332 8.26307 7.33869C8.32203 7.5341 8.45808 7.69705 8.63983 7.78992ZM8.69302 5.14973C8.755 4.66302 8.95031 4.21816 9.24057 3.85279C8.3905 3.09936 7.32032 2.59144 6.14062 2.43877V3.76554C7.14252 3.93421 8.03209 4.43494 8.69302 5.14973Z" fill="black"/>
+            </g>
+            </g>
+            <defs>
+            <clipPath id="clip0_1281_3595">
+            <rect width="24" height="24" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            
+            
+            
+            
+        
+        Heart Health
+    </h3>
+</div>
+    </span>
+    </div>
+    
+        <div class="icon-container" style="display: inline-block; height: 5.5rem; width: 22%; border: solid 2px #F20F2D; background-color: white; border-radius: 16px; text-align: center; margin: 10px; vertical-align: top; position: relative;">
+            
+            <!-- SVG for cross -->
+            <svg style="position:absolute; right:5px; top:3px; " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                <path d="M17.4141 16L25.707 7.70712C25.8944 7.51954 25.9996 7.26526 25.9995 7.00015C25.9994 6.73505 25.894 6.48083 25.7066 6.29338C25.5191 6.10592 25.2649 6.00057 24.9998 6.00049C24.7347 6.00041 24.4804 6.10559 24.2928 6.29293L15.9999 14.5858L7.70703 6.29293C7.51945 6.10559 7.26517 6.00041 7.00006 6.00049C6.73496 6.00057 6.48074 6.10592 6.29329 6.29338C6.10583 6.48083 6.00048 6.73505 6.0004 7.00015C6.00032 7.26526 6.1055 7.51954 6.29284 7.70712L14.5858 16L6.29284 24.2929C6.19989 24.3858 6.12614 24.496 6.07581 24.6174C6.02548 24.7387 5.99955 24.8688 5.99951 25.0002C5.99947 25.1315 6.02532 25.2616 6.07557 25.383C6.12583 25.5044 6.1995 25.6147 6.2924 25.7076C6.38529 25.8005 6.49558 25.8741 6.61696 25.9244C6.73834 25.9746 6.86843 26.0005 6.99981 26.0004C7.13118 26.0004 7.26125 25.9745 7.3826 25.9241C7.50395 25.8738 7.61419 25.8001 7.70703 25.7071L15.9999 17.4142L24.2928 25.7071C24.4804 25.8945 24.7347 25.9996 24.9998 25.9996C25.2649 25.9995 25.5191 25.8941 25.7066 25.7067C25.894 25.5192 25.9994 25.265 25.9995 24.9999C25.9996 24.7348 25.8944 24.4805 25.707 24.2929L17.4141 16Z" fill="red" stroke="red" stroke-width="4"/>
+                </svg>
+            
+        <span style="display: inline-block;">
+            <div style="text-align: center; padding:2px; padding-top: 10px;">
+        <h3 style="font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; color: #0367A6;"> 
+
+        
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0857 10.4585C17.7929 10.1656 17.7929 9.69073 18.0857 9.39784L20.7776 6.70601C21.0705 6.41312 21.5453 6.41312 21.8382 6.70601L23.8269 8.69473C24.1198 8.98762 24.1198 9.46249 23.8269 9.75538L21.1351 12.4472C20.8422 12.7401 20.3674 12.7401 20.0745 12.4472L18.0857 10.4585ZM19.6767 9.92816L20.6048 10.8562L22.236 9.22505L21.3079 8.29698L19.6767 9.92816Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0971 8.46978C15.8042 8.17689 15.8042 7.70202 16.0971 7.40913L18.7889 4.7173C19.0818 4.42441 19.5566 4.42441 19.8495 4.7173L21.8383 6.70602C22.1311 6.99891 22.1311 7.47378 21.8383 7.76667L19.1464 10.4585C18.8535 10.7514 18.3787 10.7514 18.0858 10.4585L16.0971 8.46978ZM17.688 7.93945L18.6161 8.86752L20.2473 7.23634L19.3192 6.30827L17.688 7.93945Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1083 6.48107C13.8155 6.18818 13.8155 5.71331 14.1083 5.42042L16.8002 2.72859C17.0931 2.4357 17.5679 2.4357 17.8608 2.72859L19.8495 4.71731C20.1424 5.0102 20.1424 5.48507 19.8495 5.77796L17.1577 8.46979C16.8648 8.76268 16.39 8.76268 16.0971 8.46979L14.1083 6.48107ZM15.6993 5.95074L16.6274 6.87881L18.2586 5.24763L17.3305 4.31957L15.6993 5.95074Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1636 6.41468C16.4565 6.70757 16.4565 7.18244 16.1636 7.47534L4.61314 19.0258C3.80775 19.8312 3.80775 21.1371 4.61314 21.9425L4.61325 21.9426C5.41861 22.7483 6.72434 22.7483 7.52971 21.9426L7.52982 21.9425L19.0803 10.392C19.3732 10.0991 19.8481 10.0991 20.1409 10.392C20.4338 10.6849 20.4338 11.1598 20.1409 11.4527L8.59059 23.003C8.59055 23.0031 8.59052 23.0031 8.59048 23.0032C7.19931 24.3948 4.94365 24.3948 3.55248 23.0032C2.1613 21.612 2.1613 19.3563 3.55248 17.9651L15.1029 6.41468C15.3958 6.12178 15.8707 6.12178 16.1636 6.41468Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.79071 15.7267C6.08361 15.4338 6.55848 15.4338 6.85137 15.7267L10.8289 19.7042C11.1218 19.9971 11.1218 20.4719 10.8289 20.7648C10.536 21.0577 10.0611 21.0577 9.7682 20.7648L5.79071 16.7873C5.49782 16.4945 5.49782 16.0196 5.79071 15.7267Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8405 9.67694C12.1334 9.38405 12.6083 9.38405 12.9012 9.67695L16.8786 13.6544C17.1715 13.9473 17.1715 14.4222 16.8786 14.7151C16.5857 15.008 16.1108 15.008 15.8179 14.7151L11.8405 10.7376C11.5476 10.4447 11.5476 9.96983 11.8405 9.67694Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.74939 5.79181C5.1636 5.79181 5.49939 6.1276 5.49939 6.54181V8.98447C5.49939 9.39868 5.1636 9.73447 4.74939 9.73447C4.33518 9.73447 3.99939 9.39868 3.99939 8.98447V6.54181C3.99939 6.1276 4.33518 5.79181 4.74939 5.79181Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.77808 7.76312C2.77808 7.34891 3.11386 7.01312 3.52808 7.01312H5.97073C6.38495 7.01312 6.72073 7.34891 6.72073 7.76312C6.72073 8.17734 6.38495 8.51312 5.97073 8.51312H3.52808C3.11386 8.51312 2.77808 8.17734 2.77808 7.76312Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.18489 0.0924957L4.74942 0.703125L4.31395 0.0924957C4.57453 -0.0933319 4.92431 -0.0933319 5.18489 0.0924957ZM4.74942 1.66473C4.70484 1.70313 4.65755 1.74455 4.60789 1.78891C4.24749 2.11081 3.7669 2.58358 3.28933 3.18346C2.3266 4.39276 1.42521 6.05517 1.45379 8.00525C1.4698 9.09752 1.89021 9.8672 2.47849 10.373C3.08112 10.8911 3.90251 11.1668 4.74942 11.1668C5.59633 11.1668 6.41772 10.8911 7.02035 10.373C7.60863 9.8672 8.02904 9.09752 8.04505 8.00525C8.07362 6.05517 7.17224 4.39276 6.20951 3.18346C5.73194 2.58358 5.25135 2.11081 4.89095 1.78891C4.84129 1.74455 4.794 1.70313 4.74942 1.66473ZM4.31395 0.0924957C4.3142 0.0923211 4.31395 0.0924957 4.74942 0.703125C5.18489 0.0924957 5.18464 0.0923211 5.18489 0.0924957L5.18735 0.0942561L5.19131 0.0971051L5.20362 0.106053C5.21376 0.113458 5.22771 0.123736 5.2452 0.136844C5.2802 0.163056 5.32944 0.200614 5.39088 0.249163C5.51369 0.346204 5.68564 0.487493 5.89018 0.670183C6.29836 1.03477 6.8412 1.5686 7.38304 2.24921C8.45914 3.60091 9.58053 5.59505 9.54489 8.02722C9.52278 9.53534 8.92228 10.716 7.99824 11.5104C7.08856 12.2925 5.90623 12.6668 4.74942 12.6668C3.59261 12.6668 2.41028 12.2925 1.5006 11.5104C0.576558 10.716 -0.0239452 9.53534 -0.0460471 8.02722C-0.0816889 5.59505 1.0397 3.60091 2.1158 2.24921C2.65764 1.5686 3.20048 1.03477 3.60866 0.670183C3.81319 0.487493 3.98515 0.346204 4.10796 0.249163C4.1694 0.200614 4.21864 0.163056 4.25363 0.136844C4.27113 0.123736 4.28508 0.113458 4.29521 0.106053L4.30753 0.0971051L4.31149 0.0942561L4.31291 0.0932396L4.31395 0.0924957Z" fill="black"/>
+            </svg>
+        
+        Complete Blood Count
+    </h3>
+</div>
+    </span>
+    </div>
+    
+        <div class="icon-container" style="display: inline-block; height: 5.5rem; width: 22%; border: solid 2px #F20F2D; background-color: white; border-radius: 16px; text-align: center; margin: 10px; vertical-align: top; position: relative;">
+            
+            <!-- SVG for cross -->
+            <svg style="position:absolute; right:5px; top:3px; " xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                <path d="M17.4141 16L25.707 7.70712C25.8944 7.51954 25.9996 7.26526 25.9995 7.00015C25.9994 6.73505 25.894 6.48083 25.7066 6.29338C25.5191 6.10592 25.2649 6.00057 24.9998 6.00049C24.7347 6.00041 24.4804 6.10559 24.2928 6.29293L15.9999 14.5858L7.70703 6.29293C7.51945 6.10559 7.26517 6.00041 7.00006 6.00049C6.73496 6.00057 6.48074 6.10592 6.29329 6.29338C6.10583 6.48083 6.00048 6.73505 6.0004 7.00015C6.00032 7.26526 6.1055 7.51954 6.29284 7.70712L14.5858 16L6.29284 24.2929C6.19989 24.3858 6.12614 24.496 6.07581 24.6174C6.02548 24.7387 5.99955 24.8688 5.99951 25.0002C5.99947 25.1315 6.02532 25.2616 6.07557 25.383C6.12583 25.5044 6.1995 25.6147 6.2924 25.7076C6.38529 25.8005 6.49558 25.8741 6.61696 25.9244C6.73834 25.9746 6.86843 26.0005 6.99981 26.0004C7.13118 26.0004 7.26125 25.9745 7.3826 25.9241C7.50395 25.8738 7.61419 25.8001 7.70703 25.7071L15.9999 17.4142L24.2928 25.7071C24.4804 25.8945 24.7347 25.9996 24.9998 25.9996C25.2649 25.9995 25.5191 25.8941 25.7066 25.7067C25.894 25.5192 25.9994 25.265 25.9995 24.9999C25.9996 24.7348 25.8944 24.4805 25.707 24.2929L17.4141 16Z" fill="red" stroke="red" stroke-width="4"/>
+                </svg>
+            
+        <span style="display: inline-block;">
+            <div style="text-align: center; padding:2px; padding-top: 10px;">
+        <h3 style="font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; color: #0367A6;"> 
+
+        
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0857 10.4585C17.7929 10.1656 17.7929 9.69073 18.0857 9.39784L20.7776 6.70601C21.0705 6.41312 21.5453 6.41312 21.8382 6.70601L23.8269 8.69473C24.1198 8.98762 24.1198 9.46249 23.8269 9.75538L21.1351 12.4472C20.8422 12.7401 20.3674 12.7401 20.0745 12.4472L18.0857 10.4585ZM19.6767 9.92816L20.6048 10.8562L22.236 9.22505L21.3079 8.29698L19.6767 9.92816Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0971 8.46978C15.8042 8.17689 15.8042 7.70202 16.0971 7.40913L18.7889 4.7173C19.0818 4.42441 19.5566 4.42441 19.8495 4.7173L21.8383 6.70602C22.1311 6.99891 22.1311 7.47378 21.8383 7.76667L19.1464 10.4585C18.8535 10.7514 18.3787 10.7514 18.0858 10.4585L16.0971 8.46978ZM17.688 7.93945L18.6161 8.86752L20.2473 7.23634L19.3192 6.30827L17.688 7.93945Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.1083 6.48107C13.8155 6.18818 13.8155 5.71331 14.1083 5.42042L16.8002 2.72859C17.0931 2.4357 17.5679 2.4357 17.8608 2.72859L19.8495 4.71731C20.1424 5.0102 20.1424 5.48507 19.8495 5.77796L17.1577 8.46979C16.8648 8.76268 16.39 8.76268 16.0971 8.46979L14.1083 6.48107ZM15.6993 5.95074L16.6274 6.87881L18.2586 5.24763L17.3305 4.31957L15.6993 5.95074Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1636 6.41468C16.4565 6.70757 16.4565 7.18244 16.1636 7.47534L4.61314 19.0258C3.80775 19.8312 3.80775 21.1371 4.61314 21.9425L4.61325 21.9426C5.41861 22.7483 6.72434 22.7483 7.52971 21.9426L7.52982 21.9425L19.0803 10.392C19.3732 10.0991 19.8481 10.0991 20.1409 10.392C20.4338 10.6849 20.4338 11.1598 20.1409 11.4527L8.59059 23.003C8.59055 23.0031 8.59052 23.0031 8.59048 23.0032C7.19931 24.3948 4.94365 24.3948 3.55248 23.0032C2.1613 21.612 2.1613 19.3563 3.55248 17.9651L15.1029 6.41468C15.3958 6.12178 15.8707 6.12178 16.1636 6.41468Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.79071 15.7267C6.08361 15.4338 6.55848 15.4338 6.85137 15.7267L10.8289 19.7042C11.1218 19.9971 11.1218 20.4719 10.8289 20.7648C10.536 21.0577 10.0611 21.0577 9.7682 20.7648L5.79071 16.7873C5.49782 16.4945 5.49782 16.0196 5.79071 15.7267Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8405 9.67694C12.1334 9.38405 12.6083 9.38405 12.9012 9.67695L16.8786 13.6544C17.1715 13.9473 17.1715 14.4222 16.8786 14.7151C16.5857 15.008 16.1108 15.008 15.8179 14.7151L11.8405 10.7376C11.5476 10.4447 11.5476 9.96983 11.8405 9.67694Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.74939 5.79181C5.1636 5.79181 5.49939 6.1276 5.49939 6.54181V8.98447C5.49939 9.39868 5.1636 9.73447 4.74939 9.73447C4.33518 9.73447 3.99939 9.39868 3.99939 8.98447V6.54181C3.99939 6.1276 4.33518 5.79181 4.74939 5.79181Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.77808 7.76312C2.77808 7.34891 3.11386 7.01312 3.52808 7.01312H5.97073C6.38495 7.01312 6.72073 7.34891 6.72073 7.76312C6.72073 8.17734 6.38495 8.51312 5.97073 8.51312H3.52808C3.11386 8.51312 2.77808 8.17734 2.77808 7.76312Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.18489 0.0924957L4.74942 0.703125L4.31395 0.0924957C4.57453 -0.0933319 4.92431 -0.0933319 5.18489 0.0924957ZM4.74942 1.66473C4.70484 1.70313 4.65755 1.74455 4.60789 1.78891C4.24749 2.11081 3.7669 2.58358 3.28933 3.18346C2.3266 4.39276 1.42521 6.05517 1.45379 8.00525C1.4698 9.09752 1.89021 9.8672 2.47849 10.373C3.08112 10.8911 3.90251 11.1668 4.74942 11.1668C5.59633 11.1668 6.41772 10.8911 7.02035 10.373C7.60863 9.8672 8.02904 9.09752 8.04505 8.00525C8.07362 6.05517 7.17224 4.39276 6.20951 3.18346C5.73194 2.58358 5.25135 2.11081 4.89095 1.78891C4.84129 1.74455 4.794 1.70313 4.74942 1.66473ZM4.31395 0.0924957C4.3142 0.0923211 4.31395 0.0924957 4.74942 0.703125C5.18489 0.0924957 5.18464 0.0923211 5.18489 0.0924957L5.18735 0.0942561L5.19131 0.0971051L5.20362 0.106053C5.21376 0.113458 5.22771 0.123736 5.2452 0.136844C5.2802 0.163056 5.32944 0.200614 5.39088 0.249163C5.51369 0.346204 5.68564 0.487493 5.89018 0.670183C6.29836 1.03477 6.8412 1.5686 7.38304 2.24921C8.45914 3.60091 9.58053 5.59505 9.54489 8.02722C9.52278 9.53534 8.92228 10.716 7.99824 11.5104C7.08856 12.2925 5.90623 12.6668 4.74942 12.6668C3.59261 12.6668 2.41028 12.2925 1.5006 11.5104C0.576558 10.716 -0.0239452 9.53534 -0.0460471 8.02722C-0.0816889 5.59505 1.0397 3.60091 2.1158 2.24921C2.65764 1.5686 3.20048 1.03477 3.60866 0.670183C3.81319 0.487493 3.98515 0.346204 4.10796 0.249163C4.1694 0.200614 4.21864 0.163056 4.25363 0.136844C4.27113 0.123736 4.28508 0.113458 4.29521 0.106053L4.30753 0.0971051L4.31149 0.0942561L4.31291 0.0932396L4.31395 0.0924957Z" fill="black"/>
+            </svg>
+        
+        Serum Electrolytes
+    </h3>
+</div>
+    </span>
+    </div>
+    
+        <div class="icon-container" style="display: inline-block; height: 5.5rem; width: 22%; border: solid 2px  #13B235 ; background-color: white; border-radius: 16px; text-align: center; margin: 10px; vertical-align: top; position: relative;">
+            
+            <!-- SVG for tick -->
+            <svg style="position:absolute; right:12px; top:3px; font-weight:bold;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                <path d="M 42.875 8.625 C 42.84375 8.632813 42.8125 8.644531 42.78125 8.65625 C 42.519531 8.722656 42.292969 8.890625 42.15625 9.125 L 21.71875 40.8125 L 7.65625 28.125 C 7.410156 27.8125 7 27.675781 6.613281 27.777344 C 6.226563 27.878906 5.941406 28.203125 5.882813 28.597656 C 5.824219 28.992188 6.003906 29.382813 6.34375 29.59375 L 21.25 43.09375 C 21.46875 43.285156 21.761719 43.371094 22.050781 43.328125 C 22.339844 43.285156 22.59375 43.121094 22.75 42.875 L 43.84375 10.1875 C 44.074219 9.859375 44.085938 9.425781 43.875 9.085938 C 43.664063 8.746094 43.269531 8.566406 42.875 8.625 Z" fill="green" stroke="green" stroke-width="4"></path>
+            </svg>
+            
+        <span style="display: inline-block;">
+            <div style="text-align: center; padding:2px; padding-top: 10px;">
+        <h3 style="font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; color: #0367A6;"> 
+
+        
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21.2268 1.03125C19.8538 -0.343353 17.5815 -0.343962 16.2085 1.03079C15.5443 1.69458 15.1785 2.57742 15.1785 3.51656C15.1785 4.4557 15.5443 5.3385 16.2082 6.00201C16.2381 6.03182 16.267 6.06234 16.2951 6.09351C15.9927 6.33735 15.7631 6.66168 15.6339 7.03204H14.8124C13.6493 7.03204 12.7031 7.97826 12.7031 9.14132V14.1062C12.4734 14.0779 12.2387 14.0629 12 14.0629C11.7613 14.0629 11.5266 14.0779 11.2969 14.1062V9.14127C11.2969 7.97821 10.3507 7.03199 9.18766 7.03199H8.36613C8.23685 6.66163 8.00731 6.33731 7.70492 6.09346C7.73295 6.06243 7.76182 6.03201 7.79154 6.00229C8.45576 5.3385 8.82157 4.45565 8.82157 3.51651C8.82157 2.57738 8.45567 1.69458 7.79187 1.03125C6.41876 -0.343587 4.1465 -0.343822 2.77354 1.03097C-0.923114 4.72762 -0.923114 10.7426 2.77321 14.4389C4.08824 15.7556 6.36434 15.8683 7.79145 14.4394C8.45566 13.7756 8.82148 12.8928 8.82148 11.9536C8.82148 11.0145 8.45567 10.1317 7.79178 9.46818C7.76192 9.43836 7.73295 9.40785 7.70487 9.37672C8.00731 9.13283 8.23685 8.8085 8.36609 8.43819H9.18762C9.57532 8.43819 9.89069 8.75361 9.89069 9.14127V14.4705C8.2294 15.1488 7.07834 16.602 7.07834 18.2815C7.07834 19.9151 8.18862 21.3883 9.89069 22.0796V23.2968C9.89069 23.6851 10.2055 23.9999 10.5938 23.9999H13.4062C13.7945 23.9999 14.1093 23.6851 14.1093 23.2968V22.0796C15.8114 21.3883 16.9216 19.915 16.9216 18.2815C16.9216 16.602 15.7706 15.1488 14.1093 14.4705V9.14127C14.1093 8.75357 14.4247 8.43819 14.8124 8.43819H15.6339C15.7632 8.80855 15.9927 9.13288 16.2951 9.37672C16.2671 9.40775 16.2382 9.43818 16.2085 9.46789C15.5443 10.1317 15.1785 11.0145 15.1785 11.9537C15.1785 12.8928 15.5443 13.7756 16.208 14.439C17.6286 15.8613 19.9048 15.7625 21.2264 14.4393C24.9231 10.7426 24.9231 4.72762 21.2268 1.03125ZM6.79695 13.4452C5.93197 14.3113 4.54648 14.2245 3.76785 13.4449C2.24525 11.9223 1.40671 9.8945 1.40671 7.73512C1.40671 5.57573 2.24525 3.54787 3.76817 2.025C4.59172 1.20043 5.97322 1.20024 6.79742 2.02547C7.19585 2.42367 7.41528 2.95317 7.41528 3.51661C7.41528 4.08005 7.19581 4.60954 6.79714 5.00803C6.48987 5.31553 6.23904 5.66873 6.0515 6.05798C5.9584 6.25115 5.95859 6.4762 6.05192 6.66923C6.14525 6.86226 6.32159 7.00218 6.53079 7.04915C6.84814 7.12045 7.07843 7.40896 7.07843 7.73512C7.07843 8.06127 6.84809 8.34979 6.53079 8.42108C6.32159 8.4681 6.14525 8.60797 6.05192 8.801C5.95859 8.99408 5.9584 9.21913 6.0515 9.41225C6.23904 9.8015 6.48997 10.1547 6.79746 10.4625C7.1959 10.8607 7.41532 11.3902 7.41532 11.9536C7.41528 12.517 7.19581 13.0466 6.79695 13.4452ZM15.5154 18.2815C15.5154 19.443 14.5875 20.4984 13.2064 20.9075C12.9078 20.996 12.703 21.2703 12.703 21.5816V22.5937H11.2968V21.5817C11.2968 21.2703 11.0921 20.996 10.7935 20.9076C9.41238 20.4984 8.48445 19.443 8.48445 18.2815C8.48445 16.7307 10.0615 15.4691 11.9999 15.4691C13.9384 15.4691 15.5154 16.7307 15.5154 18.2815ZM20.2318 13.4452C19.4647 14.2134 18.0798 14.3231 17.2026 13.4448C16.8041 13.0466 16.5847 12.5171 16.5847 11.9536C16.5847 11.3902 16.8042 10.8607 17.2029 10.4622C17.5101 10.1547 17.7609 9.8015 17.9485 9.41225C18.0416 9.21908 18.0414 8.99404 17.9481 8.801C17.8547 8.60797 17.6784 8.46805 17.4692 8.42108C17.1519 8.34979 16.9216 8.06127 16.9216 7.73512C16.9216 7.40896 17.1519 7.12045 17.4692 7.04915C17.6784 7.00213 17.8547 6.86226 17.9481 6.66923C18.0414 6.47615 18.0416 6.2511 17.9485 6.05798C17.7609 5.66873 17.51 5.31553 17.2025 5.00775C16.8041 4.60954 16.5847 4.08005 16.5847 3.51661C16.5847 2.95322 16.8041 2.42367 17.2029 2.025C18.0266 1.20033 19.4081 1.20038 20.232 2.02528C21.7546 3.54792 22.5932 5.57573 22.5932 7.73512C22.5932 9.8945 21.7547 11.9223 20.2318 13.4452Z" fill="black"/>
+            </svg>
+            
+            
+        
+        Kidney Health
+    </h3>
+</div>
+    </span>
+    </div>
+    
+        <div class="icon-container" style="display: inline-block; height: 5.5rem; width: 22%; border: solid 2px  #13B235 ; background-color: white; border-radius: 16px; text-align: center; margin: 10px; vertical-align: top; position: relative;">
+            
+            <!-- SVG for tick -->
+            <svg style="position:absolute; right:12px; top:3px; font-weight:bold;" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0 0 50 50">
+                <path d="M 42.875 8.625 C 42.84375 8.632813 42.8125 8.644531 42.78125 8.65625 C 42.519531 8.722656 42.292969 8.890625 42.15625 9.125 L 21.71875 40.8125 L 7.65625 28.125 C 7.410156 27.8125 7 27.675781 6.613281 27.777344 C 6.226563 27.878906 5.941406 28.203125 5.882813 28.597656 C 5.824219 28.992188 6.003906 29.382813 6.34375 29.59375 L 21.25 43.09375 C 21.46875 43.285156 21.761719 43.371094 22.050781 43.328125 C 22.339844 43.285156 22.59375 43.121094 22.75 42.875 L 43.84375 10.1875 C 44.074219 9.859375 44.085938 9.425781 43.875 9.085938 C 43.664063 8.746094 43.269531 8.566406 42.875 8.625 Z" fill="green" stroke="green" stroke-width="4"></path>
+            </svg>
+            
+        <span style="display: inline-block;">
+            <div style="text-align: center; padding:2px; padding-top: 10px;">
+        <h3 style="font-family: Poppins;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 20px; color: #0367A6;"> 
+
+        
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25206 9.17657C2.3588 4.03837 6.60079 -0.138452 11.7948 -0.0453954L11.7949 -0.0453941C12.182 -0.0384184 12.5637 -0.00775845 12.9386 0.0453288C13.3488 0.1034 13.6341 0.482946 13.5761 0.893068C13.518 1.30319 13.1385 1.58859 12.7283 1.53051C12.414 1.48601 12.0936 1.46023 11.7679 1.45436M2.25206 9.17657L0.0478598 13.1351C-0.135641 13.4647 -0.0458364 13.8793 0.257594 14.1033L3 16.1285V18.8438C3 20.0346 3.96537 21 5.15625 21H7.125V23.2969C7.125 23.7111 7.46079 24.0469 7.875 24.0469H18.375C18.7892 24.0469 19.125 23.7111 19.125 23.2969V22.9452C19.125 19.2011 19.6772 15.478 20.6687 11.8528C20.741 11.5886 20.8019 11.3199 20.8511 11.0474C20.9246 10.6397 20.6538 10.2497 20.2461 10.1761C19.8385 10.1026 19.4484 10.3735 19.3749 10.7811C19.3336 11.0101 19.2825 11.2356 19.2219 11.4569L19.2219 11.457C18.2339 15.0694 17.6647 18.7905 17.627 22.5469H8.625V20.25C8.625 19.8358 8.28922 19.5 7.875 19.5H5.15625C4.79379 19.5 4.5 19.2062 4.5 18.8438V15.75C4.5 15.512 4.38701 15.2881 4.19553 15.1467L1.6793 13.2885L3.65527 9.73986C3.71739 9.62829 3.75 9.5027 3.75 9.375C3.75 4.97274 7.3585 1.37541 11.7679 1.45436" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.7761 1.45312C12.381 1.45312 11.25 2.58411 11.25 3.97922V4.01625C11.25 4.76504 11.3544 5.51024 11.5601 6.23022L11.5601 6.23022C12.2375 8.60124 13.9126 10.5605 16.1495 11.5982L16.8517 11.924L17.6183 11.572C17.6183 11.572 17.6183 11.572 17.6183 11.572C19.846 10.549 21.5226 8.613 22.2168 6.26219C22.2173 6.26046 22.2178 6.25873 22.2183 6.257C22.4362 5.51739 22.5469 4.75033 22.5469 3.97927C22.5469 2.5841 21.4159 1.45312 20.0207 1.45312H19.9739C19.1958 1.45312 18.4612 1.81167 17.9825 2.425L17.9825 2.42501L17.4662 3.08647C17.3241 3.26856 17.106 3.37501 16.875 3.375C16.644 3.37499 16.4259 3.26854 16.2838 3.08644L15.7675 2.42502C15.2888 1.81167 14.5542 1.45312 13.7761 1.45312ZM9.75 3.97922C9.75 1.75567 11.5526 -0.046875 13.7761 -0.046875C14.9763 -0.046875 16.1115 0.488372 16.875 1.40891C17.6385 0.488362 18.7738 -0.046875 19.9739 -0.046875H20.0207C22.2443 -0.046875 24.0469 1.75568 24.0469 3.97927C24.0469 4.89182 23.9162 5.79968 23.6588 6.6752C23.6583 6.6772 23.6577 6.6792 23.6571 6.6812C22.8412 9.45007 20.8674 11.7306 18.2442 12.9352L18.2442 12.9352L17.1629 13.4316C16.9634 13.5232 16.7336 13.5228 16.5344 13.4304L15.5182 12.9589C12.886 11.7378 10.915 9.43233 10.1178 6.64231C9.87381 5.78833 9.75 4.90443 9.75 4.01625V3.97922Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12.75 17.25C13.1642 17.25 13.5 17.5858 13.5 18C13.5 19.6569 12.1569 21 10.5 21H7.875C7.46079 21 7.125 20.6642 7.125 20.25C7.125 19.8358 7.46079 19.5 7.875 19.5H10.5C11.3284 19.5 12 18.8284 12 18C12 17.5858 12.3358 17.25 12.75 17.25Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.74903 16.459C7.9788 16.8036 7.88568 17.2693 7.54103 17.499C6.68428 18.0702 5.67763 18.375 4.64794 18.375H3.75C3.33579 18.375 3 18.0392 3 17.625C3 17.2108 3.33579 16.875 3.75 16.875H4.64794C5.3815 16.875 6.09863 16.6579 6.70897 16.251C7.05361 16.0212 7.51926 16.1143 7.74903 16.459Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.875 4.875C17.2892 4.875 17.625 5.21079 17.625 5.625V8.625C17.625 9.03921 17.2892 9.375 16.875 9.375C16.4608 9.375 16.125 9.03921 16.125 8.625V5.625C16.125 5.21079 16.4608 4.875 16.875 4.875Z" fill="black"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M14.625 7.125C14.625 6.71079 14.9608 6.375 15.375 6.375H18.375C18.7892 6.375 19.125 6.71079 19.125 7.125C19.125 7.53921 18.7892 7.875 18.375 7.875H15.375C14.9608 7.875 14.625 7.53921 14.625 7.125Z" fill="black"/>
+            </svg>
+            
+            
+        
+        General Health
+    </h3>
+</div>
+    </span>
+    </div>
+    
+    
+    
+   
+</div>
+<div style=" border-radius: 16px; position: relative; right: 12px; margin: 3rem 0.75rem 0 0.75rem; padding: 10px; position: relative; right:20px; vertical-align: top;">
+    <h3 style="color: #0367A6; padding-left:2px; font-size: 20px;">Summary of Tests</h3>
+    <p style="font-size: 1rem; position: relative;  color: #2D2D2D;  text-align: justify; list-style: none;">Your lab results indicate low levels of hemoglobin, MCV, MCH, eosinophils, serum sodium, and serum chloride. The low hemoglobin, MCV, and MCH suggest possible iron deficiency anemia, which can cause fatigue and weakness. Low eosinophils can be associated with various factors, including medication use or underlying conditions. Low serum sodium and chloride can be caused by excessive fluid intake, certain medications, or underlying medical conditions. It's important to consult with your doctor to determine the underlying causes and appropriate treatment.</p>
+</div>
+
+
+            
+        <!-- Test Results -->
+        <div class="test-details" style="page-break-before: always; font-size: 2rem; padding-top: 1.5rem;">02. Test Details and Suggestions</div>
+
+<!-- Display inRangeCategory tests first -->
+
+
+<!-- Display other tests -->
+
+<div class="test-section" style=" page-break-after: always;">
+    <h2 class="testCategory" style="color: #0367A6; position: relative; left:10px; margin-top:1rem;">2.1 Complete Blood Count <span style="color: #575757;font-size:0.75rem"> (Refer Original Report towards the end for Test Methodology) </span></h2>
+    <div class="table-container">
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-high" style="">
+                <div class="test-name">
+                    <h2>HEMOGLOBIN</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        <svg width="12" height="12" viewBox="0 0 432 363" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:-22px; position:relative; right:1.3rem;top:1.27rem;">
+                            <path d="M250.733 341.229L424.015 61.375C427.588 55.39 429.478 48.603 429.498 41.692C429.518 34.78 427.667 27.984 424.129 21.979C420.591 15.974 415.489 10.971 409.332 7.46497C403.174 3.95996 396.175 2.07596 389.031 1.99997L42.4671 1.99997C35.3231 2.07596 28.3241 3.95996 22.1661 7.46497C16.0091 10.971 10.9071 15.974 7.36914 21.979C3.83115 27.984 1.98016 34.78 2.00015 41.692C2.02014 48.603 3.91016 55.39 7.48315 61.375L180.765 341.229C184.412 347.046 189.548 351.855 195.675 355.192C201.803 358.53 208.717 360.283 215.749 360.283C222.781 360.283 229.695 358.53 235.823 355.192C241.95 351.855 247.086 347.046 250.733 341.229Z" fill="#FF0000" stroke="#FF3B30" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        12.6 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">gm/dL</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 13.0 - 17.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>R B C COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        5.26 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">millions/cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 4.5 - 5.5</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>P C V</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        39.2 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 36.0 - 46.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-high" style="">
+                <div class="test-name">
+                    <h2>M C V</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        <svg width="12" height="12" viewBox="0 0 432 363" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:-22px; position:relative; right:1.3rem;top:1.27rem;">
+                            <path d="M250.733 341.229L424.015 61.375C427.588 55.39 429.478 48.603 429.498 41.692C429.518 34.78 427.667 27.984 424.129 21.979C420.591 15.974 415.489 10.971 409.332 7.46497C403.174 3.95996 396.175 2.07596 389.031 1.99997L42.4671 1.99997C35.3231 2.07596 28.3241 3.95996 22.1661 7.46497C16.0091 10.971 10.9071 15.974 7.36914 21.979C3.83115 27.984 1.98016 34.78 2.00015 41.692C2.02014 48.603 3.91016 55.39 7.48315 61.375L180.765 341.229C184.412 347.046 189.548 351.855 195.675 355.192C201.803 358.53 208.717 360.283 215.749 360.283C222.781 360.283 229.695 358.53 235.823 355.192C241.95 351.855 247.086 347.046 250.733 341.229Z" fill="#FF0000" stroke="#FF3B30" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        74.5 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">fl</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 76.0 - 96.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-high" style="">
+                <div class="test-name">
+                    <h2>M C H</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        <svg width="12" height="12" viewBox="0 0 432 363" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:-22px; position:relative; right:1.3rem;top:1.27rem;">
+                            <path d="M250.733 341.229L424.015 61.375C427.588 55.39 429.478 48.603 429.498 41.692C429.518 34.78 427.667 27.984 424.129 21.979C420.591 15.974 415.489 10.971 409.332 7.46497C403.174 3.95996 396.175 2.07596 389.031 1.99997L42.4671 1.99997C35.3231 2.07596 28.3241 3.95996 22.1661 7.46497C16.0091 10.971 10.9071 15.974 7.36914 21.979C3.83115 27.984 1.98016 34.78 2.00015 41.692C2.02014 48.603 3.91016 55.39 7.48315 61.375L180.765 341.229C184.412 347.046 189.548 351.855 195.675 355.192C201.803 358.53 208.717 360.283 215.749 360.283C222.781 360.283 229.695 358.53 235.823 355.192C241.95 351.855 247.086 347.046 250.733 341.229Z" fill="#FF0000" stroke="#FF3B30" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        23.9 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">pg</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 27.0 - 32.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>M C H C</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        32.1 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 32.0 - 36.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>R D W - CV</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        14.8 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 11.5 - 16.5</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>W.B.C. COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        8600 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">per cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 4,000 - 10,000</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>NEUTROPHILS</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        69.9 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 40.0 - 75.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-high" style="">
+                <div class="test-name">
+                    <h2>EOSINOPHILS</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        <svg width="12" height="12" viewBox="0 0 432 363" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:-22px; position:relative; right:1.3rem;top:1.27rem;">
+                            <path d="M250.733 341.229L424.015 61.375C427.588 55.39 429.478 48.603 429.498 41.692C429.518 34.78 427.667 27.984 424.129 21.979C420.591 15.974 415.489 10.971 409.332 7.46497C403.174 3.95996 396.175 2.07596 389.031 1.99997L42.4671 1.99997C35.3231 2.07596 28.3241 3.95996 22.1661 7.46497C16.0091 10.971 10.9071 15.974 7.36914 21.979C3.83115 27.984 1.98016 34.78 2.00015 41.692C2.02014 48.603 3.91016 55.39 7.48315 61.375L180.765 341.229C184.412 347.046 189.548 351.855 195.675 355.192C201.803 358.53 208.717 360.283 215.749 360.283C222.781 360.283 229.695 358.53 235.823 355.192C241.95 351.855 247.086 347.046 250.733 341.229Z" fill="#FF0000" stroke="#FF3B30" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        0.4 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 1.0 - 6.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>LYMPHOCYTES</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        24.9 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 20.0 - 45.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>MONOCYTES</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        4.5 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 2.0 - 10.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>BASOPHILS</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        0.3 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">%</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 0.0 - 2.0</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>ABSOLUTE NEUTROPHIL COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        6011 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">per cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 2000 - 7000</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>ABSOLUTE EOSINOPHIL COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        34 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">per cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 20 - 500</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>ABSOLUTE LYMPHOCYTE COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        2141 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">per cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 1000 - 3000</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>ABSOLUTE MONOCYTE COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        387 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">per cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 200 - 1000</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>ABSOLUTE BASOPHIL COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        26 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">per cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 0 - 200</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>PLATELET COUNT</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        2 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">lakhs/cumm</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 1.5 - 4.5</h3>
+                    
+                </div>
+            </div>
+        
+    </div>
+    
+        <!-- New Section -->
+        
+    <div style=" border-radius: 16px; position: relative; right: 20px; margin: 3rem 0.75rem 0 0.75rem; padding: 10px; vertical-align: top;">
+        <h3 style="color: #0367A6; font-size: 18px;padding-top:2px; ">Category Summary:</h3>
+        <p style="font-size: 1rem; color: #2D2D2D;  text-align: justify; list-style: none;">
+                Your Complete Blood Count results show that your Hemoglobin (12.6 gm/dL), MCV (74.5 fl), MCH (23.9 pg), and Eosinophils (0.4%) are below the normal range. Low hemoglobin, MCV, and MCH often indicate iron deficiency anemia, which means your body isn't producing enough healthy red blood cells. Low eosinophils can be associated with various factors, including medication use or underlying conditions. It's important to consult with your doctor to determine the underlying cause and appropriate treatment.
+        </p>
+    </div>
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 0rem; border-spacing: 20px; position: relative;right:2rem;bottom:2rem;">
+        
+    <div style="display: table-cell;border-radius: 16px; padding: 10px; vertical-align: top;">
+        <h3 style="color: #0367A6; font-size: 18px; margin-top: 1rem;">Symptoms associated with parameters that are out of range in Complete Blood Count:</h3>
+        <ul class="dash-list">
+            
+                <li>Fatigue: Low hemoglobin levels can lead to reduced oxygen delivery to tissues, causing fatigue and weakness.</li> 
+            
+                <li>Pale skin: Reduced red blood cell production can result in a paler complexion.</li> 
+            
+                <li>Dizziness: Insufficient oxygen supply to the brain due to low hemoglobin can cause dizziness.</li> 
+            
+                <li>Shortness of breath: The body may struggle to deliver enough oxygen to meet its needs, leading to shortness of breath, especially during physical activity.</li> 
+            
+                <li>Brittle nails: Iron deficiency can affect nail health, leading to brittle or spoon-shaped nails.</li> 
+            
+        </ul>
+        
+        <style>
+            .dash-list {
+                font-size: 10px;
+                color: #2D2D2D;
+                list-style-type: none;
+                padding-left: 15px;
+                margin-left: 0;
+            }
+            
+            .dash-list li {
+                position: relative;
+                padding-left: 8px;
+                margin-bottom: 4px;
+            }
+            
+            .dash-list li:before {
+                content: "-";
+                position: absolute;
+                left: -8px;
+            }
+        </style>
+    </div>
+    
+    </div>
+    
+    <div style="clear: both;"></div>
+
+
+
+        <div style="page-break-before: always; position: relative; ">
+            <h2 class="testCategory" style="color: #0367A6;">2.1 Complete Blood Count</h2>
+           <h3 style="color: #0367A6; font-size: 1.5rem; margin-bottom: 0; margin-top: -1rem; margin-left: 0.75rem;">Suggestions <span style="color: #575757;font-size:0.75rem">(to be validated with a Doctor)</span></h3>
+
+
+    <!-- Monitoring Health Section Container -->
+
+
+        <!-- Monitoring Health Section -->
+        <div style="display: table; width: 100%; table-layout: fixed; border-spacing: 0.75rem;">
+            <!-- Short Term Goals -->
+            <div style="display: table-cell; border: solid 2px #F2F2F2; border-radius: 16px; padding: 16px; vertical-align: top;">
+                <div style="color: #0367A6; font-size: 1rem; white-space: nowrap; display: inline-block; padding-top: 10px;"> 
+                    <span style="display: inline-block; vertical-align: middle;">
+                        <svg style="position: relative; bottom:18px;right:5px" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="16" fill="#EFFAFF"/>
+                            <path d="M11 20H21C21.5523 20 22 19.5523 22 19V12C22 11.4477 21.5523 11 21 11L11 11C10.4477 11 10 11.4477 10 12L10 19C10 19.5523 10.4477 20 11 20Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 22H14" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> 
+                    </span>
+                    
+                    <span style="display: inline-block; vertical-align: middle; position: relative; bottom:7px;">
+                        <h3 style="display: inline; margin: 0; font-size: 20px;">Monitoring Recommendations </h3>
+                        <h3 style=" margin: 0; font-size: 20px;">Short Term</h3>
+                    </span>
+                </div>
+                <ul style="font-size: 8px; color: #2D2D2D; list-style-type: none; padding-left: 0;">
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Monitor your energy levels daily and note any significant changes.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Observe your skin for any unusual paleness.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Track any instances of dizziness or shortness of breath.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Pay attention to the appearance and texture of your nails.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Keep a record of your dietary intake, focusing on iron-rich foods.
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Long Term Goals -->
+            <div style="display: table-cell; border: solid 2px #F2F2F2; border-radius: 16px; padding: 16px; vertical-align: top;">
+                <div style="color: #0367A6; font-size: 1rem; white-space: nowrap; display: inline-block; padding-top: 10px;"> 
+                    <span style="display: inline-block; vertical-align: middle;">
+                        <svg style="position: relative; bottom:18px; right:5px" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="16" fill="#EFFAFF"/>
+                            <path d="M11 20H21C21.5523 20 22 19.5523 22 19V12C22 11.4477 21.5523 11 21 11L11 11C10.4477 11 10 11.4477 10 12L10 19C10 19.5523 10.4477 20 11 20Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 22H14" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> 
+                    </span>
+                    
+                    <span style="display: inline-block; vertical-align: middle; position: relative; bottom:7px;">
+                        <h3 style="display: inline; margin: 0; font-size: 20px;">Monitoring Recommendations</h3>
+                        <h3 style=" margin: 0; font-size: 20px;"> Long Term</h3>
+                    </span>
+                </div>
+                <ul style="font-size: 8px; color: #2D2D2D; list-style-type: none; padding-left: 0;">
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Repeat Complete Blood Count (CBC) every 3 months to monitor hemoglobin, MCV, MCH, and eosinophil levels.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Consult with your doctor every 6 months to review your overall health and discuss any persistent symptoms.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Consider a bone marrow examination if the cause of low blood counts is not clear.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Monitor iron levels annually to assess iron stores and adjust supplementation as needed.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Undergo regular check-ups to assess for any underlying conditions contributing to low eosinophil count.
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+
+            </div>
+    </div>
+    
+    
+    
+<div class="test-section" style=" page-break-after: always;">
+    <h2 class="testCategory" style="color: #0367A6; position: relative; left:10px; margin-top:1rem;">2.2 Serum Electrolytes <span style="color: #575757;font-size:0.75rem"> (Refer Original Report towards the end for Test Methodology) </span></h2>
+    <div class="table-container">
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-high" style="">
+                <div class="test-name">
+                    <h2>SERUM SODIUM</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        <svg width="12" height="12" viewBox="0 0 432 363" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:-22px; position:relative; right:1.3rem;top:1.27rem;">
+                            <path d="M250.733 341.229L424.015 61.375C427.588 55.39 429.478 48.603 429.498 41.692C429.518 34.78 427.667 27.984 424.129 21.979C420.591 15.974 415.489 10.971 409.332 7.46497C403.174 3.95996 396.175 2.07596 389.031 1.99997L42.4671 1.99997C35.3231 2.07596 28.3241 3.95996 22.1661 7.46497C16.0091 10.971 10.9071 15.974 7.36914 21.979C3.83115 27.984 1.98016 34.78 2.00015 41.692C2.02014 48.603 3.91016 55.39 7.48315 61.375L180.765 341.229C184.412 347.046 189.548 351.855 195.675 355.192C201.803 358.53 208.717 360.283 215.749 360.283C222.781 360.283 229.695 358.53 235.823 355.192C241.95 351.855 247.086 347.046 250.733 341.229Z" fill="#FF0000" stroke="#FF3B30" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        128 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">mmol/L</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 135 - 148</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>SERUM POTASSIUM</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        5.2 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">mmol/L</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 3.5 - 5.3</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-high" style="">
+                <div class="test-name">
+                    <h2>SERUM CHLORIDE</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        <svg width="12" height="12" viewBox="0 0 432 363" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:-22px; position:relative; right:1.3rem;top:1.27rem;">
+                            <path d="M250.733 341.229L424.015 61.375C427.588 55.39 429.478 48.603 429.498 41.692C429.518 34.78 427.667 27.984 424.129 21.979C420.591 15.974 415.489 10.971 409.332 7.46497C403.174 3.95996 396.175 2.07596 389.031 1.99997L42.4671 1.99997C35.3231 2.07596 28.3241 3.95996 22.1661 7.46497C16.0091 10.971 10.9071 15.974 7.36914 21.979C3.83115 27.984 1.98016 34.78 2.00015 41.692C2.02014 48.603 3.91016 55.39 7.48315 61.375L180.765 341.229C184.412 347.046 189.548 351.855 195.675 355.192C201.803 358.53 208.717 360.283 215.749 360.283C222.781 360.283 229.695 358.53 235.823 355.192C241.95 351.855 247.086 347.046 250.733 341.229Z" fill="#FF0000" stroke="#FF3B30" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        
+                        92 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">mmol/L</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 98 - 107</h3>
+                    
+                </div>
+            </div>
+        
+    </div>
+    
+        <!-- New Section -->
+        
+    <div style=" border-radius: 16px; position: relative; right: 20px; margin: 3rem 0.75rem 0 0.75rem; padding: 10px; vertical-align: top;">
+        <h3 style="color: #0367A6; font-size: 18px;padding-top:2px; ">Category Summary:</h3>
+        <p style="font-size: 1rem; color: #2D2D2D;  text-align: justify; list-style: none;">
+                Your Serum Electrolytes results indicate that your Serum Sodium (128 mmol/L) and Serum Chloride (92 mmol/L) levels are below the normal range. Low sodium (hyponatremia) and low chloride (hypochloremia) can be caused by various factors, including excessive fluid intake, certain medications, or underlying medical conditions. It's important to consult with your doctor to determine the underlying cause and appropriate treatment.
+        </p>
+    </div>
+    <div style="display: table; width: 100%; table-layout: fixed; margin-top: 0rem; border-spacing: 20px; position: relative;right:2rem;bottom:2rem;">
+        
+    <div style="display: table-cell;border-radius: 16px; padding: 10px; vertical-align: top;">
+        <h3 style="color: #0367A6; font-size: 18px; margin-top: 1rem;">Symptoms associated with parameters that are out of range in Serum Electrolytes:</h3>
+        <ul class="dash-list">
+            
+                <li>Nausea and vomiting: Electrolyte imbalances can disrupt normal digestive function, leading to nausea and vomiting.</li> 
+            
+                <li>Headache: Changes in sodium and chloride levels can affect brain function, causing headaches.</li> 
+            
+                <li>Confusion: Severe electrolyte imbalances can impair cognitive function, leading to confusion and disorientation.</li> 
+            
+                <li>Muscle weakness, spasms, or cramps: Electrolytes play a crucial role in muscle function, and imbalances can cause weakness, spasms, or cramps.</li> 
+            
+                <li>Seizures: In severe cases, electrolyte imbalances can disrupt brain activity and trigger seizures.</li> 
+            
+        </ul>
+        
+        <style>
+            .dash-list {
+                font-size: 10px;
+                color: #2D2D2D;
+                list-style-type: none;
+                padding-left: 15px;
+                margin-left: 0;
+            }
+            
+            .dash-list li {
+                position: relative;
+                padding-left: 8px;
+                margin-bottom: 4px;
+            }
+            
+            .dash-list li:before {
+                content: "-";
+                position: absolute;
+                left: -8px;
+            }
+        </style>
+    </div>
+    
+    </div>
+    
+    <div style="clear: both;"></div>
+
+
+
+        <div style="page-break-before: always; position: relative; ">
+            <h2 class="testCategory" style="color: #0367A6;">2.2 Serum Electrolytes</h2>
+           <h3 style="color: #0367A6; font-size: 1.5rem; margin-bottom: 0; margin-top: -1rem; margin-left: 0.75rem;">Suggestions <span style="color: #575757;font-size:0.75rem">(to be validated with a Doctor)</span></h3>
+
+
+    <!-- Monitoring Health Section Container -->
+
+
+        <!-- Monitoring Health Section -->
+        <div style="display: table; width: 100%; table-layout: fixed; border-spacing: 0.75rem;">
+            <!-- Short Term Goals -->
+            <div style="display: table-cell; border: solid 2px #F2F2F2; border-radius: 16px; padding: 16px; vertical-align: top;">
+                <div style="color: #0367A6; font-size: 1rem; white-space: nowrap; display: inline-block; padding-top: 10px;"> 
+                    <span style="display: inline-block; vertical-align: middle;">
+                        <svg style="position: relative; bottom:18px;right:5px" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="16" fill="#EFFAFF"/>
+                            <path d="M11 20H21C21.5523 20 22 19.5523 22 19V12C22 11.4477 21.5523 11 21 11L11 11C10.4477 11 10 11.4477 10 12L10 19C10 19.5523 10.4477 20 11 20Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 22H14" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> 
+                    </span>
+                    
+                    <span style="display: inline-block; vertical-align: middle; position: relative; bottom:7px;">
+                        <h3 style="display: inline; margin: 0; font-size: 20px;">Monitoring Recommendations </h3>
+                        <h3 style=" margin: 0; font-size: 20px;">Short Term</h3>
+                    </span>
+                </div>
+                <ul style="font-size: 8px; color: #2D2D2D; list-style-type: none; padding-left: 0;">
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Monitor your fluid intake and output daily.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Note any instances of nausea, vomiting, or headache.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Pay attention to any changes in your mental clarity or cognitive function.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Observe for any muscle weakness, spasms, or cramps.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Keep a record of your dietary intake, focusing on sodium and chloride-rich foods.
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- Long Term Goals -->
+            <div style="display: table-cell; border: solid 2px #F2F2F2; border-radius: 16px; padding: 16px; vertical-align: top;">
+                <div style="color: #0367A6; font-size: 1rem; white-space: nowrap; display: inline-block; padding-top: 10px;"> 
+                    <span style="display: inline-block; vertical-align: middle;">
+                        <svg style="position: relative; bottom:18px; right:5px" width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="16" fill="#EFFAFF"/>
+                            <path d="M11 20H21C21.5523 20 22 19.5523 22 19V12C22 11.4477 21.5523 11 21 11L11 11C10.4477 11 10 11.4477 10 12L10 19C10 19.5523 10.4477 20 11 20Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M18 22H14" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg> 
+                    </span>
+                    
+                    <span style="display: inline-block; vertical-align: middle; position: relative; bottom:7px;">
+                        <h3 style="display: inline; margin: 0; font-size: 20px;">Monitoring Recommendations</h3>
+                        <h3 style=" margin: 0; font-size: 20px;"> Long Term</h3>
+                    </span>
+                </div>
+                <ul style="font-size: 8px; color: #2D2D2D; list-style-type: none; padding-left: 0;">
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Repeat Serum Electrolytes test every 3 months to monitor sodium and chloride levels.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Consult with your doctor every 6 months to review your overall health and discuss any persistent symptoms.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Monitor kidney function annually to assess for any underlying kidney issues contributing to electrolyte imbalances.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Review medications annually to identify any drugs that may be affecting electrolyte levels.
+                    </li>
+                    
+                    <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;">
+                        <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Undergo regular check-ups to assess for any underlying conditions contributing to electrolyte imbalances.
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    
+
+            </div>
+    </div>
+    
+    
+    
+
+    
+    
+        
+    
+        
+    
+    
+    
+<div class="test-section" style="page-break-inside: avoid; ">
+    <h2 class="testCategory" style="color: #0367A6; position: relative; left:10px; margin-top:1.3rem;">2.3 Heart Health <span style="color: #575757;font-size:0.75rem"> (Refer Original Report towards the end for Test Methodology) </span></h2>
+    <div class="table-container">
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>Troponin - I</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        11.29 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">pg/ml</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: Upto 100</h3>
+                    
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<div class="test-section" style="page-break-inside: avoid; ">
+    <h2 class="testCategory" style="color: #0367A6; position: relative; left:10px; margin-top:1.3rem;">2.4 Kidney Health <span style="color: #575757;font-size:0.75rem"> (Refer Original Report towards the end for Test Methodology) </span></h2>
+    <div class="table-container">
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>SERUM UREA LEVEL</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        36 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">mg/dL</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 18 - 55</h3>
+                    
+                </div>
+            </div>
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>SERUM CREATININE</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        0.68 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">mg/dl</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: 0.6 - 1.2</h3>
+                    
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+<div class="test-section" style="page-break-inside: avoid; ">
+    <h2 class="testCategory" style="color: #0367A6; position: relative; left:10px; margin-top:1.3rem;">2.5 General Health <span style="color: #575757;font-size:0.75rem"> (Refer Original Report towards the end for Test Methodology) </span></h2>
+    <div class="table-container">
+        
+            
+            
+            
+            
+            
+            
+            
+                
+            
+    
+            <div class="table-card status-normal" style="">
+                <div class="test-name">
+                    <h2>C – REACTIVE PROTEIN (ON SERUM)</h2>
+                </div>
+                <div class="value">
+                    <h1 class="num-value" style="margin-top:0.8rem; display: flex; align-items: center;">
+                        
+                        0.1 
+                        
+                            <span style="font-size: 0.8rem; color: #575757; margin-left: 4px;">mg/L</span>
+                        
+                    </h1>
+                </div>
+                <div class="reference">
+                    
+                        <h3 class="ref-value">Range: Negative : Less than or equal to 6 mg/L</h3>
+                    
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+ 
+<!-- Overall recommendations -->
+
+
+<div style="display: table; width: 100%;table-layout: fixed; margin-top: 1rem; border-spacing: 0.75rem; position: relative; page-break-before: always;">
+    <div class="test-details" style=" page-break-after: avoid; font-size: 2rem; padding-top: 1.5rem;">03. Diet, Exercise and Health Monitoring Suggestions</div>
+
+    <!-- Diet Recommmendations -->
+    <div style=" border-radius: 16px; padding: 16px; vertical-align: top;">
+     <div style="color: #0367A6; font-size: 20px; white-space: nowrap; display: inline-block; padding-top: 10px;"> 
+         <span style="display: inline-block; vertical-align: middle;">
+             <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <rect width="32" height="32" rx="16" fill="#EFFAFF"/>
+                 <path d="M14 9V11" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M16 9V11" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M18 9V11" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M11 13H21C21.1326 13 21.2598 13.0527 21.3536 13.1464C21.4473 13.2402 21.5 13.3674 21.5 13.5V19.5C21.5 19.8978 21.342 20.2794 21.0607 20.5607C20.7794 20.842 20.3978 21 20 21H12C11.6022 21 11.2206 20.842 10.9393 20.5607C10.658 20.2794 10.5 19.8978 10.5 19.5V13.5C10.5 13.3674 10.5527 13.2402 10.6464 13.1464C10.7402 13.0527 10.8674 13 11 13Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M23.5 14L21.5 15.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M8.5 14L10.5 15.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+             </svg>
+         </span>
+         
+         <span style="display: inline-block; vertical-align: top; position: relative;">
+             <h3 style="display: inline; margin: 0; font-size: 20px;">Diet Recommendations</h3>
+         </span>
+     </div>
+     
+      <ul style="font-size:12px; color: #2D2D2D; list-style-type: none; position: relative;  right: 2.2rem;">
+         
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"><svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+        Iron (12.6 gm/dL Hemoglobin, 74.5 fl MCV, 23.9 pg MCH are below range) - Increase intake of iron-rich foods to combat potential iron deficiency anemia. Good sources include spinach, fenugreek leaves (methi), lentils (dal), chickpeas (chana), kidney beans (rajma), and fortified cereals. Since you are strictly vegetarian, focus on plant-based iron sources and combine them with vitamin C-rich foods like lemon, oranges, and bell peppers to enhance iron absorption. Consider iron supplements if dietary changes are insufficient, but only under medical supervision. Bariatric surgery can sometimes affect nutrient absorption, so it's important to address this potential issue proactively.
+        </li>
+        
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"><svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+        Sodium (128 mmol/L Serum Sodium is below range) - Increase sodium intake to address hyponatremia. Since you are vegetarian, incorporate foods like pickles, papad, and salted nuts in moderation. Be mindful of your overall sodium intake, especially if you have hypertension, a hereditary condition. Consult your doctor to determine the appropriate sodium intake level for your specific needs.
+        </li>
+        
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"><svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+        Chloride (92 mmol/L Serum Chloride is below range) - Increase chloride intake to address hypochloremia. Table salt (sodium chloride) is the primary source of chloride. Ensure you are adequately salting your food. Other vegetarian sources include seaweed and tomatoes. Again, balance this with your hypertension risk and consult your doctor.
+        </li>
+        
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"><svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+        General Hydration - Ensure adequate fluid intake to help maintain electrolyte balance. Drink plenty of water throughout the day. Since you have low sodium and chloride, consider electrolyte-rich beverages like coconut water or homemade oral rehydration solutions (ORS) in moderation.
+        </li>
+        
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"><svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+        Vitamin B12 - Since you are vegetarian, ensure you are getting enough Vitamin B12. Good sources include fortified foods like nutritional yeast, breakfast cereals, and plant-based milks. Consider a B12 supplement if dietary sources are insufficient, especially given potential absorption issues post-bariatric surgery.
+        </li>
+        
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"><svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+        Things to Avoid - Avoid excessive fluid intake, which can further dilute sodium levels. Limit processed foods high in sodium but low in nutritional value. Be cautious with diuretics or medications that can exacerbate electrolyte imbalances. Avoid restrictive diets that may limit essential nutrient intake.
+        </li>
+        
+    
+ </div>
+ <!-- Exercise -->
+ <div style=" border-radius: 16px; padding: 16px; padding-bottom:0; margin-bottom: 0; vertical-align: top; position:relative; bottom:1.8rem; page-break-after: always;">
+     <div style="color: #0367A6; font-size: 20px; white-space: nowrap; display: inline-block; padding-top: 10px;"> 
+         <span style="display: inline-block; vertical-align: middle;">
+             <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                 <rect width="32" height="32" rx="16" fill="#EFFAFF"/>
+                 <path d="M13.5 11.5H12C11.7239 11.5 11.5 11.7239 11.5 12V20C11.5 20.2761 11.7239 20.5 12 20.5H13.5C13.7761 20.5 14 20.2761 14 20V12C14 11.7239 13.7761 11.5 13.5 11.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M20 11.5H18.5C18.2239 11.5 18 11.7239 18 12V20C18 20.2761 18.2239 20.5 18.5 20.5H20C20.2761 20.5 20.5 20.2761 20.5 20V12C20.5 11.7239 20.2761 11.5 20 11.5Z" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M20.5 13H22C22.1326 13 22.2598 13.0527 22.3536 13.1464C22.4473 13.2402 22.5 13.3674 22.5 13.5V18.5C22.5 18.6326 22.4473 18.7598 22.3536 18.8536C22.2598 18.9473 22.1326 19 22 19H20.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M11.5 19H10C9.86739 19 9.74021 18.9473 9.64645 18.8536C9.55268 18.7598 9.5 18.6326 9.5 18.5V13.5C9.5 13.3674 9.55268 13.2402 9.64645 13.1464C9.74021 13.0527 9.86739 13 10 13H11.5" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+                 <path d="M14 16H18" stroke="#0367A6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg> 
+         </span>
+         
+         <span style="display: inline-block; vertical-align: top; position: relative; ">
+             <h3 style="display: inline; margin: 0; font-size: 20px;">Exercise Recommendations</h3>
+         </span>
+     </div>
+
+     <ul style="font-size:12px; color: #2D2D2D; list-style-type: none; position: relative; right: 2.2rem;">
+     
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"> <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+         Engage in low-impact exercises such as walking, swimming, or cycling for at least 30 minutes most days of the week. These activities are gentle on the joints and can improve cardiovascular health.
+        </li>
+       
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"> <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+         Incorporate strength training exercises using light weights or resistance bands to maintain muscle mass and bone density. Focus on exercises that target major muscle groups, such as squats, lunges, and rows.
+        </li>
+       
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"> <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+         Practice balance exercises such as standing on one foot or using a balance board to improve stability and reduce the risk of falls.
+        </li>
+       
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"> <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+         Include flexibility exercises such as stretching or yoga to maintain range of motion and prevent stiffness.
+        </li>
+       
+     <li style="margin-top: 0.2rem; text-indent: -1.8rem; padding-left: 1.8rem;"> <svg style="vertical-align: top; margin-right: 8px;position:relative; top:3px; display:inline;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M9.25 5.25L3.75 10.75L1 8.00012" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         <path d="M14.9999 5.25L9.49988 10.75L8.03906 9.28925" stroke="#13B335" stroke-linecap="round" stroke-linejoin="round"/>
+         </svg>
+         Avoid high-impact activities such as running or jumping, which can put excessive stress on the joints. Also, avoid exercises that cause pain or discomfort.
+        </li>
+       
+      </ul>
+    
+ </div>
+ </div>
+
+<!-- Overall Monitoring Table -->
+    
+<div class="overall-tables" >
+    <h3>Monitoring Recommendations for Lab Tests</h3>
+    <table>
+        <tr style="background-color: #0367A6; font-weight: bold; color: white;">
+            <th style="border: 2px solid #F2F2F2; padding: 8px; text-align: center; white-space: nowrap;">Test Category</th>
+            <th style="border: 2px solid #F2F2F2; padding: 8px; text-align: center; white-space: nowrap;">Test/Check</th>
+            <th style="border: 2px solid #F2F2F2; padding: 8px; text-align: center; white-space: nowrap;">Monitoring Frequency</th>
+        </tr>
+        
+        <tr style="color: #2D2D2D;">
+            <td style="border: 2px solid #F2F2F2; padding: 8px;">Complete Blood Count</td>
+            <td style="border: 2px solid #F2F2F2; padding: 8px;">Hemoglobin, MCV, MCH, Eosinophils</td>
+            <td style="border: 2px solid #F2F2F2; padding: 8px;">Every 3 months</td>
+        </tr>
+        
+        <tr style="color: #2D2D2D;">
+            <td style="border: 2px solid #F2F2F2; padding: 8px;">Serum Electrolytes</td>
+            <td style="border: 2px solid #F2F2F2; padding: 8px;">Serum Sodium, Serum Chloride</td>
+            <td style="border: 2px solid #F2F2F2; padding: 8px;">Every 3 months</td>
+        </tr>
+        
+    </table>
+</div>
+
+<!-- Overall Diet Table -->
+
+<!-- Feedback Page -->
+
+    <div style="padding: 0; font-family: Arial, sans-serif; page-break-before: always;">
+
+        <!-- <h2 style="color: #0367A6; font-size: 2rem; font-weight: 800; padding: 0; margin-top: 1.5rem;">Trusted Reference Articles For You</h2>
+    
+        <div style="border: 1px solid #F2F2F2;border-radius: 16px; padding: 16px; margin-top: -1rem;">
+            
+            <div style="margin-bottom: 20px;">
+                
+                <h3 style="color: #0367A6; font-size: 16px; margin-bottom: 10px;">
+                    Iron Deficiency Anemia
+                </h3>
+
+
+                <div style="margin-left: 20px;">
+                    <li style="font-size: 10px; color: #575757; list-style: none;">
+                        <a href="https://www.nhlbi.nih.gov/health-topics/iron-deficiency-anemia" style="color: #575757; text-decoration: none;">
+                            https://www.nhlbi.nih.gov/health-topics/iron-deficiency-anemia
+                        </a>
+                    </li>
+                </div>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+                
+                <h3 style="color: #0367A6; font-size: 16px; margin-bottom: 10px;">
+                    Hyponatremia
+                </h3>
+
+
+                <div style="margin-left: 20px;">
+                    <li style="font-size: 10px; color: #575757; list-style: none;">
+                        <a href="https://www.kidney.org/atoz/content/hyponatremia" style="color: #575757; text-decoration: none;">
+                            https://www.kidney.org/atoz/content/hyponatremia
+                        </a>
+                    </li>
+                </div>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+                
+                <h3 style="color: #0367A6; font-size: 16px; margin-bottom: 10px;">
+                    Hypochloremia
+                </h3>
+
+
+                <div style="margin-left: 20px;">
+                    <li style="font-size: 10px; color: #575757; list-style: none;">
+                        <a href="https://www.ncbi.nlm.nih.gov/books/NBK482280/" style="color: #575757; text-decoration: none;">
+                            https://www.ncbi.nlm.nih.gov/books/NBK482280/
+                        </a>
+                    </li>
+                </div>
+            </div>
+         -->
+    </div>
+        <!-- Feedback Section -->
+        <h1 style="color: #0367A6; font-size: 2rem; margin-bottom: 20px; font-weight: 800;">Your Feedback Matters</h1>
+        
+
+        
+    
+        <!-- Contact Information -->
+        <div style="margin-bottom: 40px; border: 1px solid transparent;">
+            <span style="display: inline-block; margin-left: 1rem;">
+               
+                <a href="mailto:contact@healthsutra.ai" style="color: #0367A6; text-decoration: none;">contact@healthsutra.ai</a>
+            </span>
+            <a href="https://www.linkedin.com/company/healthsutra-analytics" style="display: inline-block; vertical-align: middle; position: relative; left:37rem">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect width="32" height="32" fill="url(#pattern0_783_15921)"/>
+                    <defs>
+                    <pattern id="pattern0_783_15921" patternContentUnits="objectBoundingBox" width="1" height="1">
+                    <use xlink:href="#image0_783_15921" transform="scale(0.00195312)"/>
+                    </pattern>
+                    <image id="image0_783_15921" width="512" height="512" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAIABJREFUeJzt3XmcXXV9//HX93tnSYCAkoCIosEFC9a4QCkEUSJMZibGjUpoATcEXJAKP5bMTMDbq8nMxA0FpQpuFdASSkWkmSXRsJiAFVGxYBUkwa2IhJAECLPc7/f3R8AGmmWWe8/nLO/n4+EGD+e8ZjRzPvd7vuccEBERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERGZLGcdICJ1UF41hZHqdOLoNAhNRJpxpSY8zVRjEz5u/c9P/z1iE/gmiAHcMIEhSm6YGLb+e9wwzg0Rq8N4hoh+mBifhNIGfrPhUa5dULX+lkVkfDQAiGRBedUUqk++mKp7Ed7PIIbpRDcDmA5xOs7NIDAdH576a3735OJCJPgN+PgwuPWEsPVfvVtPjA8D63HuYVz8E8N+HbutfpBKJSTXJyLbowFAJA3Ky5oY3eMAcAcSSzMhHAhuJoGZwIF4nm/aV1tDEB+AuA7cWiLr8Kyl6tbhSuvoOfYhcNE6UiTvNACIJOmcNVNp3nwIxFk4NwvCLJw/CMILwOvPIwBxC7i1EO4BfxeEu3D+LhrWPKCVA5Ha0S8ckbqIjoX9L8aVZuHiLIiziG4W8HI83rouk0J4DO9/AfEucFuHglF+wdKWjdZpIlmkAUCkFsqrZjA0MhsfjiIyG+deDUyzziqG8Fvwd+BYTZXVNG/8KZUFw9ZVImmnAUBk3KLjwv6DCO4ogjsKOArPK6yr5GlxCzH+GOd+SPCrYfg2eudvsK4SSRsNACK7Ul7VwMjIYRCPJnIUjtnAPtZZMg6RuyGsxrnVVEs3sbTlt9ZJItY0AIhsT1ff88G3Au1AC/Bc4yKprXuAPlzoZ1O8lUvnDVkHiSRNA4AIwBl3NLLP+iMJsY0Y2/H+NdZJkpTwOIEf4H0/jj6WtK61LhJJggYAKa7zB/enkXkQ2wkch2dP6yRJg/hroA98H5tHb9LqgOSVBgAplvNu3I+mhncSORHnXm+d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"/>
+                    </defs>
+                    </svg>
+                    
+            </a>
+        </div>
+    
+        <!-- References Section -->
+        
+    <div style="background-color: #F5F9FF; padding: 20px; border-radius: 4px; margin-bottom: 30px;margin-top: 5rem;">
+        <p style="color: #575757; font-style: italic; line-height: 1.5; margin: 0;font-size: 20px;">
+            We're pioneers in the industry, and we value your feedback on how we helped you understand your health better. Share your thoughts using the feedback link below or leave us a note on our social media pages. Your input inspires our team and helps us improve continuously.
+        </p>
+    </div>
+    </div>
+
+    <div style="text-align: center; margin: 2rem 0; font-size: 1.5rem; font-weight: bold; color: #0367A6; position: relative; top:10rem;">
+       END OF SMART REPORT
+    </div>
+</body>
+</html>
